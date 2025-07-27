@@ -40,4 +40,9 @@
     <dimen name="border_width_normal">1.5dp</dimen>
     <dimen name="border_width_strong">2dp</dimen>
 
+    <!-- Grid -->
+    <dimen name="grid_column">4dp</dimen>
+    <dimen name="grid_gutter">12dp</dimen>
+    <dimen name="grid_margin">20dp</dimen>
+
 </resources>
