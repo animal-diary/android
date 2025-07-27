@@ -33,6 +33,29 @@ class AvatarView @JvmOverloads constructor(
     private var onCameraClickListener: (() -> Unit)? = null
 
     init {
+        // XML 속성 읽기
+        attrs?.let {
+            val typedArray = context.obtainStyledAttributes(it, R.styleable.AvatarView, 0, 0)
+
+            try {
+                showProfile = typedArray.getBoolean(R.styleable.AvatarView_showProfile, true)
+                showCamera = typedArray.getBoolean(R.styleable.AvatarView_showCamera, false)
+
+                // avatarSize를 dimension으로 읽기 (기본값: 80dp)
+                val defaultSizePx = dpToPx(80f)
+                val sizePx = typedArray.getDimension(R.styleable.AvatarView_avatarSize, defaultSizePx)
+                avatarSize = pxToDp(sizePx).toInt()
+
+                // 프로필 이미지 리소스 읽기
+                val profileImageRes = typedArray.getResourceId(R.styleable.AvatarView_profileImage, -1)
+                if (profileImageRes != -1) {
+                    profileImage = ContextCompat.getDrawable(context, profileImageRes)
+                }
+            } finally {
+                typedArray.recycle()
+            }
+        }
+
         // 기본 설정
         backgroundPaint.color = defaultBackgroundColor
         borderPaint.apply {
@@ -41,8 +64,10 @@ class AvatarView @JvmOverloads constructor(
             strokeWidth = dpToPx(1f)
         }
 
-        // 기본 아이콘 설정
-        profileImage = ContextCompat.getDrawable(context, R.drawable.ic_profile_solid)
+        // 기본 아이콘 설정 (XML에서 설정하지 않은 경우)
+        if (profileImage == null) {
+            profileImage = ContextCompat.getDrawable(context, R.drawable.ic_profile_solid)
+        }
         cameraIcon = ContextCompat.getDrawable(context, R.drawable.ic_camera_solid)
 
         // 클릭 이벤트 설정
@@ -174,6 +199,10 @@ class AvatarView @JvmOverloads constructor(
 
     private fun dpToPx(dp: Float): Float {
         return dp * context.resources.displayMetrics.density
+    }
+
+    private fun pxToDp(px: Float): Float {
+        return px / context.resources.displayMetrics.density
     }
 }
 
