@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Spacing -->
+    <dimen name="spacing_none">0dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">20dp</dimen>
+    <dimen name="spacing_2xl">24dp</dimen>
+    <dimen name="spacing_3xl">32dp</dimen>
+    <dimen name="spacing_4xl">40dp</dimen>
+    <dimen name="spacing_5xl">64dp</dimen>
+    <dimen name="spacing_6xl">80dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_none">0dp</dimen>
+    <dimen name="padding_xs">4dp</dimen>
+    <dimen name="padding_sm">8dp</dimen>
+    <dimen name="padding_md">12dp</dimen>
+    <dimen name="padding_lg">16dp</dimen>
+    <dimen name="padding_xl">20dp</dimen>
+    <dimen name="padding_2xl">24dp</dimen>
+    <dimen name="padding_3xl">32dp</dimen>
+    <dimen name="padding_4xl">40dp</dimen>
+
+    <!-- Radius -->
+    <dimen name="radius_xs">2dp</dimen>
+    <dimen name="radius_sm">4dp</dimen>
+    <dimen name="radius_md">6dp</dimen>
+    <dimen name="radius_lg">8dp</dimen>
+    <dimen name="radius_xl">12dp</dimen>
+    <dimen name="radius_2xl">16dp</dimen>
+    <dimen name="radius_3xl">20dp</dimen>
+    <dimen name="radius_full">999dp</dimen>
+
+    <!-- Border -->
+    <dimen name="border_width_weak">1dp</dimen>
+    <dimen name="border_width_normal">1.5dp</dimen>
+    <dimen name="border_width_strong">2dp</dimen>
+
+    <!-- Grid -->
+    <dimen name="grid_column">4dp</dimen>
+    <dimen name="grid_gutter">12dp</dimen>
+    <dimen name="grid_margin">20dp</dimen>
+
+</resources>
