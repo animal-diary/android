@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/padding_md"
+        android:paddingEnd="@dimen/padding_md"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+
+        <!-- Left Icon -->
+        <ImageView
+            android:id="@+id/leftIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:src="@drawable/ic_plus_line" />
+
+        <!-- Text -->
+        <TextView
+            android:id="@+id/buttonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text Button"
+            android:fontFamily="@font/pretendard_medium"
+            android:textSize="14sp" />
+
+        <!-- Right Icon -->
+        <ImageView
+            android:id="@+id/rightIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="@dimen/spacing_xs"
+            android:src="@drawable/ic_plus_line" />
+    </LinearLayout>
+</merge>
