@@ -1,5 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Global Token -->
+
+    <!-- Common -->
+    <color name="color_common_0">#FFFFFF</color>
+    <color name="color_common_1000">#000000</color>
+    <color name="color_common_black_transparent_60">#99000000</color>
+
+    <!-- Neutral -->
+    <color name="color_neutral_50">#FAFAFA</color>
+    <color name="color_neutral_100">#F5F5F5</color>
+    <color name="color_neutral_200">#E5E5E5</color>
+    <color name="color_neutral_300">#D4D4D4</color>
+    <color name="color_neutral_400">#A3A3A3</color>
+    <color name="color_neutral_500">#525252</color>
+    <color name="color_neutral_600">#404040</color>
+    <color name="color_neutral_700">#262626</color>
+    <color name="color_neutral_800">#171717</color>
+    <color name="color_neutral_900">#0A0A0A</color>
+
+    <!-- Neutral Transparent -->
+    <color name="color_neutral_transparent_00">#000A0A0A</color>
+    <color name="color_neutral_transparent_05">#0D0A0A0A</color>
+    <color name="color_neutral_transparent_10">#1A0A0A0A</color>
+    <color name="color_neutral_transparent_20">#330A0A0A</color>
+    <color name="color_neutral_transparent_30">#4D0A0A0A</color>
+    <color name="color_neutral_transparent_40">#660A0A0A</color>
+    <color name="color_neutral_transparent_50">#800A0A0A</color>
+    <color name="color_neutral_transparent_60">#990A0A0A</color>
+
+    <!-- Brand -->
+    <color name="color_brand_100">#FDE9D7</color>
+    <color name="color_brand_200">#FACFAE</color>
+    <color name="color_brand_300">#F38044</color>
+    <color name="color_brand_400">#EF5F20</color>
+    <color name="color_brand_500">#E65100</color>
+    <color name="color_brand_600">#D84315</color>
+    <color name="color_brand_700">#BA3214</color>
+    <color name="color_brand_800">#942A18</color>
+    <color name="color_brand_900">#772517</color>
+
+    <!-- Yellow -->
+    <color name="color_yellow_100">#FFFAED</color>
+    <color name="color_yellow_200">#FBF6C6</color>
+    <color name="color_yellow_300">#F8EA90</color>
+    <color name="color_yellow_400">#FFD14A</color>
+    <color name="color_yellow_500">#4E4300</color>
+
+    <!-- Green -->
+    <color name="color_green_100">#DCFAB6</color>
+    <color name="color_green_200">#D6F2B2</color>
+    <color name="color_green_300">#ABDD65</color>
+    <color name="color_green_400">#80CA18</color>
+    <color name="color_green_500">#325603</color>
+
+    <!-- Red -->
+    <color name="color_red_100">#FFE9E9</color>
+    <color name="color_red_200">#FFCACB</color>
+    <color name="color_red_300">#E53935</color>
+    <color name="color_red_400">#B3261E</color>
+    <color name="color_red_500">#8C1D18</color>
+
+    <!-- Blue -->
+    <color name="color_blue_100">#E6F0FF</color>
+    <color name="color_blue_200">#96C0FF</color>
+    <color name="color_blue_300">#6BA6FF</color>
+    <color name="color_blue_400">#0065FF</color>
+    <color name="color_blue_500">#003E9C</color>
+
+    <!-- Pink -->
+    <color name="color_pink_100">#FBE8EF</color>
+    <color name="color_pink_200">#FCE0EB</color>
+    <color name="color_pink_300">#F6C4D3</color>
+    <color name="color_pink_400">#D81B60</color>
+    <color name="color_pink_500">#AD1457</color>
+
+    <!-- System Token -->
+
+    <!-- Background 1-->
+    <color name="bg_brand_primary_default">@color/color_brand_500</color>
+    <color name="bg_brand_primary_pressed">@color/color_brand_700</color>
+    <color name="bg_brand_secondary_default">@color/color_brand_100</color>
+    <color name="bg_brand_secondary_pressed">@color/color_brand_200</color>
+
+    <color name="bg_page_white">@color/color_common_0</color>
+    <color name="bg_page_neutral">@color/color_neutral_100</color>
+    <color name="bg_base">@color/color_common_0</color>
+    <color name="bg_disabled">@color/color_neutral_100</color>
+
+
+    <color name="bg_selected_default">@color/color_common_0</color>
+    <color name="bg_selected_pressed">@color/color_brand_100</color>
+
+    <color name="bg_neutral_primary_default">@color/color_neutral_200</color>
+    <color name="bg_neutral_primary_pressed">@color/color_neutral_300</color>
+
+    <color name="bg_neutral_secondary_default">@color/color_neutral_100</color>
+    <color name="bg_neutral_secondary_pressed">@color/color_neutral_200</color>
+
+    <color name="bg_neutral_tertiary_default">@color/color_neutral_transparent_00</color>
+    <color name="bg_neutral_tertiary_pressed">@color/color_neutral_100</color>
+
+    <color name="bg_warning_strong">@color/color_yellow_300</color>
+    <color name="bg_error_strong">@color/color_red_300</color>
+    <color name="bg_success_strong">@color/color_green_300</color>
+    <color name="bg_information_strong">@color/color_blue_300</color>
+    <color name="bg_pink_strong">@color/color_pink_300</color>
+
+    <color name="bg_warning_normal">@color/color_yellow_100</color>
+    <color name="bg_error_normal">@color/color_red_100</color>
+    <color name="bg_success_normal">@color/color_green_100</color>
+    <color name="bg_information_normal">@color/color_blue_100</color>
+    <color name="bg_pink_normal">@color/color_pink_100</color>
+
+    <!-- Outline -->
+    <color name="outline_brand_primary">@color/color_brand_500</color>
+    <color name="outline_brand_secondary">@color/color_brand_300</color>
+    <color name="outline_selected">@color/color_brand_600</color>
+    <color name="outline_neutral">@color/color_neutral_300</color>
+    <color name="outline_inverse">@color/color_common_0</color>
+    <color name="outline_disabled">@color/color_neutral_transparent_30</color>
+
+    <color name="outline_warning">@color/color_yellow_400</color>
+    <color name="outline_success">@color/color_green_400</color>
+    <color name="outline_error_strong">@color/color_red_400</color>
+    <color name="outline_error_normal">@color/color_red_400</color>
+    <color name="outline_information">@color/color_blue_400</color>
+    <color name="outline_accent_pink">@color/color_pink_400</color>
+
+    <!-- Foreground -->
+    <color name="fg_brand_default">@color/color_brand_600</color>
+    <color name="fg_brand_pressed">@color/color_brand_700</color>
+    <color name="fg_selected">@color/color_brand_600</color>
+    <color name="fg_onprimary">@color/color_common_0</color>
+    <color name="fg_disabled">@color/color_neutral_transparent_30</color>
+    <color name="fg_neutral_primary">@color/color_neutral_800</color>
+    <color name="fg_neutral_secondary">@color/color_neutral_600</color>
+    <color name="fg_neutral_tertiary">@color/color_neutral_500</color>
+    <color name="fg_neutral_assistive">@color/color_neutral_transparent_30</color>
+    <color name="fg_inverse">@color/color_common_0</color>
+
+    <color name="fg_accent_red_normal">@color/color_red_300</color>
+    <color name="fg_accent_red_strong">@color/color_red_500</color>
+    <color name="fg_accent_blue_normal">@color/color_blue_400</color>
+    <color name="fg_accent_blue_strong">@color/color_blue_500</color>
+    <color name="fg_accent_pink_strong">@color/color_pink_400</color>
+    <color name="fg_accent_pink_normal">@color/color_pink_500</color>
+    <color name="fg_accent_yellow">@color/color_yellow_500</color>
+    <color name="fg_accent_green">@color/color_green_500</color>
+
+    <!-- Surface -->
+    <color name="surface_overlay">@color/color_neutral_transparent_40</color>
+    <color name="surface_smoke_top">@color/color_neutral_transparent_30</color>
+    <color name="surface_smoke_bottom">@color/color_common_black_transparent_60</color>
+
+    <color name="surface_onoverlay_default">@color/color_common_0</color>
+    <color name="surface_onoverlay_pressed">@color/color_neutral_100</color>
+    <color name="surface_onelevation_default">@color/color_common_0</color>
+    <color name="surface_onelevation_pressed">@color/color_neutral_100</color>
+
 </resources>

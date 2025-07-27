@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Opacity -->
+    <item name="opacity00" type="dimen">0.0</item>
+    <item name="opacity05" type="dimen">0.05</item>
+    <item name="opacity10" type="dimen">0.10</item>
+    <item name="opacity20" type="dimen">0.20</item>
+    <item name="opacity30" type="dimen">0.30</item>
+    <item name="opacity40" type="dimen">0.40</item>
+    <item name="opacity50" type="dimen">0.50</item>
+    <item name="opacity60" type="dimen">0.60</item>
+
+    <!-- Depth (X, Y offset용) -->
+    <item name="depth00" type="dimen">0dp</item>
+    <item name="depth01" type="dimen">1dp</item>
+    <item name="depth02" type="dimen">2dp</item>
+    <item name="depth04" type="dimen">4dp</item>
+    <item name="depth10" type="dimen">10dp</item>
+    <item name="depth15" type="dimen">15dp</item>
+    <item name="depth20" type="dimen">20dp</item>
+    <item name="depth25" type="dimen">25dp</item>
+
+    <!-- Blur (Android 기본 XML에선 직접 못 씀 → 참고용 상수) -->
+    <item name="blur02" type="dimen">2dp</item>
+    <item name="blur04" type="dimen">4dp</item>
+    <item name="blur06" type="dimen">6dp</item>
+    <item name="blur10" type="dimen">10dp</item>
+    <item name="blur15" type="dimen">15dp</item>
+    <item name="blur20" type="dimen">20dp</item>
+    <item name="blur25" type="dimen">25dp</item>
+    <item name="blur50" type="dimen">50dp</item>
+
+</resources>
