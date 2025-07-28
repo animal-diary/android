@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/carousel_container"
+    android:layout_width="match_parent"
+    android:layout_height="82dp"
+    android:background="@drawable/carousel_background_default"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="8dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Illustration/Avatar Circle -->
+    <ImageView
+        android:id="@+id/iv_illust"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:background="@drawable/circle_background_neutral"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_profile_solid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title and Content Container -->
+    <LinearLayout
+        android:id="@+id/ll_title_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_icon"
+        app:layout_constraintStart_toEndOf="@+id/iv_illust"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Title with Sub badge container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/Text_Title20Strong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fill the Title"
+                android:textColor="@color/fg_neutral_primary" />
+
+            <TextView
+                android:id="@+id/tv_sub"
+                style="@style/Text_Caption12Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:paddingHorizontal="@dimen/spacing_xs"
+                android:paddingVertical="2dp"
+                android:text="Sub"
+                android:textColor="@color/fg_neutral_secondary" />
+
+        </LinearLayout>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tv_description"
+            style="@style/Text_Body14Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Description"
+            android:textColor="@color/fg_neutral_secondary" />
+
+    </LinearLayout>
+
+    <!-- Right Icon -->
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_chevron_right"
+        android:tint="@color/fg_neutral_tertiary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
