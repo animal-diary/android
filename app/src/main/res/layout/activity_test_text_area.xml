@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.example.animaldiary.components.TextAreaView
+        <com.example.animaldiary.ui.components.TextAreaView
             android:id="@+id/testTextArea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

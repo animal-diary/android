@@ -1,8 +1,7 @@
-package com.example.animaldiary.components
+package com.example.animaldiary.ui.components
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.LinearLayout

@@ -1,4 +1,4 @@
-package com.example.animaldiary.components
+package com.example.animaldiary.ui.components
 
 import android.content.Context
 import android.text.Editable

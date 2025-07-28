@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import com.example.animaldiary.databinding.ActivityTestTextButtonBinding
+import com.example.animaldiary.ui.components.TextButtonView
 
 class TestTextButtonActivity : AppCompatActivity() {
 
@@ -61,7 +62,7 @@ class TestTextButtonActivity : AppCompatActivity() {
 //        setupDisableButton(button)
     }
 
-    private fun setButtonNormalState(button: com.example.animaldiary.components.TextButtonView) {
+    private fun setButtonNormalState(button: TextButtonView) {
         // 비활성화 상태 확인
         if (!button.isEnabled) {
             setButtonDisabledState(button)
@@ -75,7 +76,7 @@ class TestTextButtonActivity : AppCompatActivity() {
         updateIconColors(button, defaultIconColor)
     }
 
-    private fun setButtonPressedState(button: com.example.animaldiary.components.TextButtonView) {
+    private fun setButtonPressedState(button: TextButtonView) {
         // 비활성화 상태에서는 pressed 상태 무시
         if (!button.isEnabled) {
             return
@@ -88,7 +89,7 @@ class TestTextButtonActivity : AppCompatActivity() {
         updateIconColors(button, pressedIconColor)
     }
 
-    private fun setButtonDisabledState(button: com.example.animaldiary.components.TextButtonView) {
+    private fun setButtonDisabledState(button: TextButtonView) {
         // 텍스트 색상 변경
         button.getTextView().setTextColor(disabledTextColor)
 
@@ -96,7 +97,7 @@ class TestTextButtonActivity : AppCompatActivity() {
         updateIconColors(button, disabledIconColor)
     }
 
-    private fun updateIconColors(button: com.example.animaldiary.components.TextButtonView, color: Int) {
+    private fun updateIconColors(button: TextButtonView, color: Int) {
         val colorStateList = android.content.res.ColorStateList.valueOf(color)
 
         if (button.getLeftIconView().visibility == android.view.View.VISIBLE) {
@@ -108,7 +109,7 @@ class TestTextButtonActivity : AppCompatActivity() {
     }
 
     // 테스트를 위한 비활성화 토글 버튼
-//    private fun setupDisableButton(textButton: com.example.animaldiary.components.TextButtonView) {
+//    private fun setupDisableButton(textButton: com.example.animaldiary.ui.components.TextButtonView) {
 //        // 3초 후 비활성화, 6초 후 다시 활성화 (테스트용)
 //        textButton.postDelayed({
 //            textButton.setButtonEnabled(false)
