@@ -12,6 +12,32 @@
         <attr name="profileImage" format="reference" />
     </declare-styleable>
 
+    <!-- Carousel Item 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="CarouselItemView">
+        <!-- 각 요소 표시 여부 -->
+        <attr name="showDescription" format="boolean" />
+        <attr name="showIllust" format="boolean" />
+        <attr name="showIcon" format="boolean" />
+        <attr name="showSub" format="boolean" />
+
+        <!-- 콘텐츠 -->
+        <attr name="carouselTitle" format="string" />
+        <attr name="carouselSubTitle" format="string" />
+        <attr name="carouselDescription" format="string" />
+
+        <!-- 이미지 리소스 -->
+        <attr name="illustDrawable" format="reference" />
+        <attr name="iconDrawable" format="reference" />
+
+        <!-- 상태 -->
+        <attr name="carouselState" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="focused" value="1" />
+            <enum name="pressed" value="2" />
+            <enum name="empty" value="3" />
+        </attr>
+    </declare-styleable>
+
     <!-- 미리 정의된 아바타 크기들 -->
     <dimen name="avatar_size_small">32dp</dimen>
     <dimen name="avatar_size_medium">48dp</dimen>
