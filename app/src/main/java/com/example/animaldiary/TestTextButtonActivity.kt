@@ -34,10 +34,6 @@ class TestTextButtonActivity : AppCompatActivity() {
     private fun setupTextButton() {
         val button = binding.testTextButton
 
-        button.setText("더보기")
-        button.setLeftIcon(R.drawable.ic_chevron_left)
-        button.setRightIcon(null)
-
         // 초기 상태
         setButtonNormalState(button)
 

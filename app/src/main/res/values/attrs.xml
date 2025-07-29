@@ -47,6 +47,13 @@
         <attr name="ta_maxLength" format="integer" />
     </declare-styleable>
 
+    <!-- TextButtonView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="TextButtonView">
+        <attr name="tb_text" format="string" />
+        <attr name="tb_leftIcon" format="reference" />
+        <attr name="tb_rightIcon" format="reference" />
+    </declare-styleable>
+
     <!-- 미리 정의된 아바타 크기들 -->
     <dimen name="avatar_size_small">32dp</dimen>
     <dimen name="avatar_size_medium">48dp</dimen>
