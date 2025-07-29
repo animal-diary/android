@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <com.example.animaldiary.ui.components.TextInputView
+        android:id="@+id/inputEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ti_title="이메일"
+        app:ti_description="가입에 사용될 이메일을 입력하세요"
+        app:ti_placeholder="example@email.com"
+        app:ti_required="true"
+        app:ti_icon="@drawable/ic_chevron_down"
+        app:ti_errorText="이메일 형식이 아닙니다"
+        app:ti_state="normal" />
+
+    <Button
+        android:id="@+id/btnValidate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인"
+        android:layout_marginTop="24dp" />
+</LinearLayout>
