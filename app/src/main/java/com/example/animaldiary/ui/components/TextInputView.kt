@@ -103,17 +103,17 @@ class TextInputView @JvmOverloads constructor(
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_default)
     }
 
-    private fun setDefaultState() {
+    fun setDefaultState() {
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_default)
         errorText.visibility = GONE
     }
 
-    private fun setFocusedState() {
+    fun setFocusedState() {
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_active)
         errorText.visibility = GONE
     }
 
-    private fun setErrorState() {
+    fun setErrorState() {
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_error)
         errorText.visibility = VISIBLE
     }
