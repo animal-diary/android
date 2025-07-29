@@ -40,7 +40,21 @@ class TextAreaView @JvmOverloads constructor(
         etInput = findViewById(R.id.ta_input)
         tvCount = findViewById(R.id.ta_count)
 
-        // click focus
+        // XML 속성 처리
+        attrs?.let {
+            val ta = context.obtainStyledAttributes(it, R.styleable.TextAreaView, 0, 0)
+            try {
+                ta.getString(R.styleable.TextAreaView_ta_title)?.let { setTitle(it) }
+                showRequired(ta.getBoolean(R.styleable.TextAreaView_ta_required, false))
+                ta.getString(R.styleable.TextAreaView_ta_description)?.let { setDescription(it) }
+                showCount(ta.getBoolean(R.styleable.TextAreaView_ta_showCount, false))
+                setMaxLength(ta.getInt(R.styleable.TextAreaView_ta_maxLength, 200))
+            } finally {
+                ta.recycle()
+            }
+        }
+
+        // 포커스 상태 처리
         etInput.setOnFocusChangeListener { _, hasFocus ->
             val text = etInput.text.toString()
             when {
@@ -62,10 +76,10 @@ class TextAreaView @JvmOverloads constructor(
         })
 
         // 초기 visibility & state
-        titleContainer.visibility = View.GONE
-        tvRequired.visibility = View.GONE
-        tvDesc.visibility = View.GONE
-        tvCount.visibility = View.GONE
+        if (titleContainer.visibility != View.VISIBLE) titleContainer.visibility = View.GONE
+        if (tvRequired.visibility != View.VISIBLE) tvRequired.visibility = View.GONE
+        if (tvDesc.visibility != View.VISIBLE) tvDesc.visibility = View.GONE
+        if (tvCount.visibility != View.VISIBLE) tvCount.visibility = View.GONE
         setStateDefault()
     }
 
@@ -90,6 +104,10 @@ class TextAreaView @JvmOverloads constructor(
 
     fun setMaxLength(length: Int) {
         maxLength = length
+        if (showCount) {
+            val len = etInput.text?.length ?: 0
+            tvCount.text = "$len/$maxLength"
+        }
     }
 
     fun getText(): String = etInput.text.toString()

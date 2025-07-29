@@ -38,6 +38,15 @@
         </attr>
     </declare-styleable>
 
+    <!-- TextAreaView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="TextAreaView">
+        <attr name="ta_title" format="string" />
+        <attr name="ta_required" format="boolean" />
+        <attr name="ta_description" format="string" />
+        <attr name="ta_showCount" format="boolean" />
+        <attr name="ta_maxLength" format="integer" />
+    </declare-styleable>
+
     <!-- 미리 정의된 아바타 크기들 -->
     <dimen name="avatar_size_small">32dp</dimen>
     <dimen name="avatar_size_medium">48dp</dimen>

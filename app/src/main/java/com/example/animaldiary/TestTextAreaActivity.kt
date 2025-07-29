@@ -22,13 +22,6 @@ class TestTextAreaActivity : AppCompatActivity() {
         // 뷰 참조
         textArea = findViewById(R.id.testTextArea)
 
-        // 속성 설정
-        textArea.setTitle("내용을 입력해주세요")
-        textArea.showRequired(true)
-        textArea.setDescription("200자 이내로 작성해 주세요")
-        textArea.showCount(true)
-        textArea.setMaxLength(200)
-
         // 버튼 클릭 시 현재 입력값을 토스트로 확인
         findViewById<Button>(R.id.btnRead).setOnClickListener {
             clearTextAreaFocus()
