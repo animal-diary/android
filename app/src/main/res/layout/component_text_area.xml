@@ -5,8 +5,7 @@
         android:id="@+id/ta_root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <!-- Title + Required Mark -->
         <LinearLayout
@@ -28,8 +27,9 @@
                 android:id="@+id/ta_requiredMark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" *"
+                android:text="*"
                 android:textSize="14sp"
+                android:layout_marginStart="@dimen/spacing_xs"
                 android:textColor="@color/fg_accent_red_normal"
                 android:fontFamily="@font/pretendard_medium" />
         </LinearLayout>
@@ -57,7 +57,7 @@
             android:padding="@dimen/padding_md"
             android:inputType="textMultiLine"
             android:maxLines="5"
-            android:background="@drawable/bg_text_area_default"
+            android:background="@drawable/bg_text_input_default"
             android:overScrollMode="always"
             android:scrollbars="vertical"/>
 

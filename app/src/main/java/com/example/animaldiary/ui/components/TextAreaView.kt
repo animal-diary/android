@@ -114,17 +114,17 @@ class TextAreaView @JvmOverloads constructor(
 
     // 상태별 배경 변경
     private fun setStateDefault() {
-        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_area_default)
+        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_input_default)
     }
     private fun setStateActive() {
-        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_area_active)
+        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_input_active)
     }
     private fun setStateCompleted() {
-        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_area_default)
+        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_input_default)
     }
     private fun setStateDisabled() {
         etInput.isEnabled = false
-//        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_area_disabled)
+        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_input_disabled)
     }
 
     override fun performClick(): Boolean {
