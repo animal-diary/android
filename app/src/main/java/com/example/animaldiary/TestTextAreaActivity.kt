@@ -14,6 +14,9 @@ import com.example.animaldiary.ui.components.TextAreaView
 class TestTextAreaActivity : AppCompatActivity() {
 
     private lateinit var textArea: TextAreaView
+    private lateinit var btnRead: Button
+    private lateinit var btnDisable: Button
+    private lateinit var btnReset: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,13 +24,32 @@ class TestTextAreaActivity : AppCompatActivity() {
 
         // 뷰 참조
         textArea = findViewById(R.id.testTextArea)
+        btnRead = findViewById(R.id.btnRead)
+        btnDisable = findViewById(R.id.btnDisable)
+        btnReset = findViewById(R.id.btnReset)
 
         // 버튼 클릭 시 현재 입력값을 토스트로 확인
-        findViewById<Button>(R.id.btnRead).setOnClickListener {
+        btnRead.setOnClickListener {
             clearTextAreaFocus()
 
             val input = textArea.getText()
             Toast.makeText(this, "입력값: $input", Toast.LENGTH_SHORT).show()
+        }
+
+        // 비활성화 테스트
+        btnDisable.setOnClickListener {
+            textArea.setDisabledState()
+        }
+
+        // 초기화 테스트
+        btnReset.setOnClickListener {
+            textArea.setTitle("내용을 입력해주세요")
+            textArea.setDescription("200자 이내로 작성해 주세요")
+            textArea.setMaxLength(200)
+            textArea.showRequired(true)
+            textArea.showCount(true)
+            textArea.setEnabled(true)
+            textArea.setDefaultState()
         }
     }
 

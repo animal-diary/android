@@ -25,6 +25,7 @@
         <activity android:name=".TestTextButtonActivity" />
         <activity android:name=".TestVitalButtonActivity" />
         <activity android:name=".TestTextAreaActivity" />
+        <activity android:name=".TestTextInputActivity" />
     </application>
 
 </manifest>

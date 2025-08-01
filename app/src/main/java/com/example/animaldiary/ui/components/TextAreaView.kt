@@ -49,6 +49,11 @@ class TextAreaView @JvmOverloads constructor(
                 ta.getString(R.styleable.TextAreaView_ta_description)?.let { setDescription(it) }
                 showCount(ta.getBoolean(R.styleable.TextAreaView_ta_showCount, false))
                 setMaxLength(ta.getInt(R.styleable.TextAreaView_ta_maxLength, 200))
+                when (ta.getInt(R.styleable.TextAreaView_ta_state, 0)) {
+                    0 -> setDefaultState()
+                    1 -> setFocusedState()
+                    2 -> setDisabledState()
+                }
             } finally {
                 ta.recycle()
             }
@@ -58,10 +63,10 @@ class TextAreaView @JvmOverloads constructor(
         etInput.setOnFocusChangeListener { _, hasFocus ->
             val text = etInput.text.toString()
             when {
-                !isEnabled -> setStateDisabled()
-                hasFocus -> setStateActive()
-                text.isNotBlank() -> setStateCompleted()
-                else -> setStateDefault()
+                !isEnabled -> setDisabledState()
+                hasFocus -> setFocusedState()
+                text.isNotBlank() -> setFocusedState()
+                else -> setDefaultState()
             }
         }
         etInput.addTextChangedListener(object : TextWatcher {
@@ -80,7 +85,7 @@ class TextAreaView @JvmOverloads constructor(
         if (tvRequired.visibility != View.VISIBLE) tvRequired.visibility = View.GONE
         if (tvDesc.visibility != View.VISIBLE) tvDesc.visibility = View.GONE
         if (tvCount.visibility != View.VISIBLE) tvCount.visibility = View.GONE
-        setStateDefault()
+        setDefaultState()
     }
 
     fun setTitle(text: String) {
@@ -113,18 +118,15 @@ class TextAreaView @JvmOverloads constructor(
     fun getText(): String = etInput.text.toString()
 
     // 상태별 배경 변경
-    private fun setStateDefault() {
-        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_area_default)
+    fun setDefaultState() {
+        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_input_default)
     }
-    private fun setStateActive() {
-        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_area_active)
+    fun setFocusedState() {
+        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_input_active)
     }
-    private fun setStateCompleted() {
-        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_area_default)
-    }
-    private fun setStateDisabled() {
+    fun setDisabledState() {
         etInput.isEnabled = false
-//        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_area_disabled)
+        etInput.background = ContextCompat.getDrawable(context, R.drawable.bg_text_input_disabled)
     }
 
     override fun performClick(): Boolean {

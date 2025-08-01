@@ -12,6 +12,13 @@
         <attr name="profileImage" format="reference" />
     </declare-styleable>
 
+    <!-- 미리 정의된 아바타 크기들 -->
+    <dimen name="avatar_size_small">32dp</dimen>
+    <dimen name="avatar_size_medium">48dp</dimen>
+    <dimen name="avatar_size_large">64dp</dimen>
+    <dimen name="avatar_size_extra_large">80dp</dimen>
+    <dimen name="avatar_size_xxl">96dp</dimen>
+
     <!-- Carousel Item 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="CarouselItemView">
         <!-- 각 요소 표시 여부 -->
@@ -38,6 +45,22 @@
         </attr>
     </declare-styleable>
 
+    <!-- TextInputView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="TextInputView">
+        <attr name="ti_title" format="string" />
+        <attr name="ti_description" format="string" />
+        <attr name="ti_placeholder" format="string" />
+        <attr name="ti_required" format="boolean" />
+        <attr name="ti_icon" format="reference" />
+        <attr name="ti_errorText" format="string" />
+        <attr name="ti_state" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="focused" value="1" />
+            <enum name="error" value="2" />
+            <enum name="disabled" value="3" />
+        </attr>
+    </declare-styleable>
+
     <!-- TextAreaView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TextAreaView">
         <attr name="ta_title" format="string" />
@@ -45,6 +68,11 @@
         <attr name="ta_description" format="string" />
         <attr name="ta_showCount" format="boolean" />
         <attr name="ta_maxLength" format="integer" />
+        <attr name="ta_state" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="focused" value="1" />
+            <enum name="disabled" value="2" />
+        </attr>
     </declare-styleable>
 
     <!-- TextButtonView 컴포넌트 커스텀 속성 정의 -->
@@ -54,10 +82,4 @@
         <attr name="tb_rightIcon" format="reference" />
     </declare-styleable>
 
-    <!-- 미리 정의된 아바타 크기들 -->
-    <dimen name="avatar_size_small">32dp</dimen>
-    <dimen name="avatar_size_medium">48dp</dimen>
-    <dimen name="avatar_size_large">64dp</dimen>
-    <dimen name="avatar_size_extra_large">80dp</dimen>
-    <dimen name="avatar_size_xxl">96dp</dimen>
 </resources>
