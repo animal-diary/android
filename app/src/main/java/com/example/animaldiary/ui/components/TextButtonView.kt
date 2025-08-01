@@ -31,6 +31,22 @@ class TextButtonView @JvmOverloads constructor(
         rightIcon = findViewById(R.id.rightIcon)
         textView = findViewById(R.id.buttonText)
 
+        // XML 속성 처리
+        attrs?.let {
+            val typedArray = context.obtainStyledAttributes(it, R.styleable.TextButtonView, 0, 0)
+            try {
+                val text = typedArray.getString(R.styleable.TextButtonView_tb_text)
+                val leftIconResId = typedArray.getResourceId(R.styleable.TextButtonView_tb_leftIcon, 0)
+                val rightIconResId = typedArray.getResourceId(R.styleable.TextButtonView_tb_rightIcon, 0)
+
+                text?.let { setText(it) }
+                setLeftIcon(if (leftIconResId != 0) leftIconResId else null)
+                setRightIcon(if (rightIconResId != 0) rightIconResId else null)
+            } finally {
+                typedArray.recycle()
+            }
+        }
+
     }
 
     fun setText(text: String) {
