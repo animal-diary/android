@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/sf_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title + Required Mark -->
+        <LinearLayout
+            android:id="@+id/sf_titleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sf_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="14sp"
+                android:textColor="@color/fg_neutral_primary"
+                android:fontFamily="@font/pretendard_medium" />
+
+            <TextView
+                android:id="@+id/sf_requiredMark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textSize="14sp"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:textColor="@color/fg_accent_red_normal"
+                android:fontFamily="@font/pretendard_medium" />
+        </LinearLayout>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/sf_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="description"
+            android:textSize="16sp"
+            android:textColor="@color/fg_neutral_tertiary"
+            android:fontFamily="@font/pretendard_regular"
+            android:layout_marginBottom="@dimen/spacing_xs" />
+
+        <!-- Input Field with Icon -->
+        <LinearLayout
+            android:id="@+id/sf_inputContainer"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_text_input_default"
+            android:paddingHorizontal="@dimen/padding_md"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/sf_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Choose an option"
+                android:textSize="16sp"
+                android:textColor="@color/fg_neutral_tertiary"
+                android:fontFamily="@font/pretendard_regular" />
+
+            <Space
+                android:layout_width="@dimen/spacing_xs"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/sf_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_chevron_right"
+                app:tint="@color/fg_neutral_tertiary" />
+        </LinearLayout>
+
+        <!-- Error text -->
+        <TextView
+            android:id="@+id/sf_errorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Error text"
+            android:textSize="14sp"
+            android:textColor="@color/fg_accent_red_normal"
+            android:fontFamily="@font/pretendard_regular"
+            android:layout_marginTop="@dimen/spacing_xs" />
+    </LinearLayout>
+</merge>
