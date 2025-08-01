@@ -45,6 +45,15 @@
         </attr>
     </declare-styleable>
 
+    <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="TopNavigationView">
+        <attr name="tnv_title" format="string" />
+        <attr name="tnv_showTitle" format="boolean" />
+        <attr name="tnv_leftIcon" format="reference" />
+        <attr name="tnv_rightIcon1" format="reference" />
+        <attr name="tnv_rightIcon2" format="reference" />
+    </declare-styleable>
+
     <!-- TextInputView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TextInputView">
         <attr name="ti_title" format="string" />
