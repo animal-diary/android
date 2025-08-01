@@ -52,13 +52,24 @@
                 android:layout_marginBottom="10dp"/>
         </FrameLayout>
 
-        <!-- Case 3: 아이콘 없음 -->
-        <com.example.animaldiary.ui.components.TopNavigationView
-            android:id="@+id/topNav3"
+        <FrameLayout
+            android:id="@+id/topNavWrapper3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tnv_leftIcon="@drawable/ic_logo_default"
-            app:tnv_showTitle="false" />
+            android:translationZ="4dp"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:background="@android:color/transparent">
+
+            <!-- Case 3: 아이콘 없음 -->
+            <com.example.animaldiary.ui.components.TopNavigationView
+                android:id="@+id/topNav3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tnv_leftIcon="@drawable/ic_logo_default"
+                app:tnv_showTitle="false"
+                android:layout_marginBottom="10dp"/>
+        </FrameLayout>
 
     </LinearLayout>
 </ScrollView>
