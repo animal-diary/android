@@ -21,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".TestTextButtonActivity" />
+        <activity android:name=".TestVitalButtonActivity" />
+        <activity android:name=".TestTextAreaActivity" />
+        <activity android:name=".TestTextInputActivity" />
+        <activity android:name=".TestSelectFieldActivity" />
+        <activity android:name=".TestTopNavigationActivity" />
     </application>
 
 </manifest>

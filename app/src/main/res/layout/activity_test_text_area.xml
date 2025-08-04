@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.example.animaldiary.ui.components.TextAreaView
+            android:id="@+id/testTextArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ta_title="내용을 입력해주세요"
+            app:ta_required="true"
+            app:ta_description="200자 이내로 작성해 주세요"
+            app:ta_showCount="true"
+            app:ta_maxLength="200"
+            app:ta_state="normal"/>
+
+        <Button
+            android:id="@+id/btnRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="읽어오기"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnDisable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비활성화"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초기화"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+</FrameLayout>

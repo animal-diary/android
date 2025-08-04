@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/testRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".TestTextButtonActivity">
+
+    <!-- 테스트용 텍스트 버튼 -->
+    <com.example.animaldiary.ui.components.TextButtonView
+        android:id="@+id/testTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:tb_text="더보기"
+        app:tb_leftIcon="@drawable/ic_chevron_left"
+        app:tb_rightIcon="@null"/>
+
+</LinearLayout>
