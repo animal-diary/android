@@ -45,6 +45,21 @@
         </attr>
     </declare-styleable>
 
+    <!-- SelectFieldView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="SelectFieldView">
+        <attr name="sf_title" format="string" />
+        <attr name="sf_description" format="string" />
+        <attr name="sf_placeholder" format="string" />
+        <attr name="sf_required" format="boolean" />
+        <attr name="sf_icon" format="reference" />
+        <attr name="sf_errorText" format="string" />
+        <attr name="sf_state" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="focused" value="1" />
+            <enum name="error" value="2" />
+            <enum name="disabled" value="3" />
+        </attr>
+      
     <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TopNavigationView">
         <attr name="tnv_title" format="string" />

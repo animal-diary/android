@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/bg_page_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:dividerPadding="16dp">
+
+        <!-- Default -->
+        <com.example.animaldiary.ui.components.SelectFieldView
+            android:id="@+id/sf_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sf_title="Title"
+            app:sf_description="description"
+            app:sf_placeholder="Choose an option"
+            app:sf_icon="@drawable/ic_chevron_right"
+            app:sf_required="true"
+            app:sf_state="normal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Focused -->
+        <com.example.animaldiary.ui.components.SelectFieldView
+            android:id="@+id/sf_focused"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sf_title="Title"
+            app:sf_description="description"
+            app:sf_placeholder="Choose an option"
+            app:sf_icon="@drawable/ic_chevron_right"
+            app:sf_required="true"
+            app:sf_state="focused"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Disabled -->
+        <com.example.animaldiary.ui.components.SelectFieldView
+            android:id="@+id/sf_disabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sf_title="Title"
+            app:sf_description="description"
+            app:sf_placeholder="Choose an option"
+            app:sf_icon="@drawable/ic_chevron_right"
+            app:sf_required="true"
+            app:sf_state="disabled"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Error -->
+        <com.example.animaldiary.ui.components.SelectFieldView
+            android:id="@+id/sf_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sf_title="Title"
+            app:sf_description="description"
+            app:sf_placeholder="Choose an option"
+            app:sf_icon="@drawable/ic_chevron_right"
+            app:sf_required="true"
+            app:sf_state="error"
+            app:sf_errorText="label" />
+
+    </LinearLayout>
+</ScrollView>
