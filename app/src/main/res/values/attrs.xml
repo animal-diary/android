@@ -55,13 +55,6 @@
         </attr>
     </declare-styleable>
 
-    <!-- 미리 정의된 아바타 크기들 -->
-    <dimen name="avatar_size_small">32dp</dimen>
-    <dimen name="avatar_size_medium">48dp</dimen>
-    <dimen name="avatar_size_large">64dp</dimen>
-    <dimen name="avatar_size_extra_large">80dp</dimen>
-    <dimen name="avatar_size_xxl">96dp</dimen>
-
   <!-- SelectFieldView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="SelectFieldView">
         <attr name="sf_title" format="string" />
@@ -76,6 +69,7 @@
             <enum name="error" value="2" />
             <enum name="disabled" value="3" />
         </attr>
+    </declare-styleable>
       
     <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TopNavigationView">
