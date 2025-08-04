@@ -1,4 +1,4 @@
-package com.example.animaldiary
+package com.example.animaldiary.test
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
+import com.example.animaldiary.R
 import com.example.animaldiary.databinding.ActivityTestTextButtonBinding
 import com.example.animaldiary.ui.components.TextButtonView
 

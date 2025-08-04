@@ -1,9 +1,8 @@
-package com.example.animaldiary
+package com.example.animaldiary.test
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.animaldiary.databinding.ActivityTestSelectCardBinding
-import com.example.animaldiary.ui.components.SelectCardView
 
 class TestSelectCardActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.animaldiary
+package com.example.animaldiary.test
 
 import android.content.Context
 import android.graphics.Rect
@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.animaldiary.R
 import com.example.animaldiary.ui.components.TextAreaView
 
 class TestTextAreaActivity : AppCompatActivity() {
