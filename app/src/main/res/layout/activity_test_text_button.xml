@@ -10,14 +10,38 @@
     android:padding="24dp"
     tools:context=".test.TestTextButtonActivity">
 
-    <!-- 테스트용 텍스트 버튼 -->
+    <!-- Primary TextButton -->
     <com.example.animaldiary.ui.components.TextButtonView
-        android:id="@+id/testTextButton"
+        android:id="@+id/testTextButtonPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         app:tb_text="더보기"
         app:tb_leftIcon="@drawable/ic_chevron_left"
-        app:tb_rightIcon="@null"/>
+        app:tb_hierarchy="primary"
+        app:tb_state="normal"/>
+
+    <!-- Primary TextButton -->
+    <com.example.animaldiary.ui.components.TextButtonView
+        android:id="@+id/testTextButtonNeutral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:tb_text="건너뛰기"
+        app:tb_rightIcon="@drawable/ic_chevron_right"
+        app:tb_hierarchy="primary"
+        app:tb_state="pressed"/>
+
+    <!-- Disabled 상태 예시 -->
+    <com.example.animaldiary.ui.components.TextButtonView
+        android:id="@+id/testTextButtonDisabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:tb_text="비활성화"
+        app:tb_hierarchy="primary"
+        app:tb_state="disabled"/>
+
+
 
 </LinearLayout>

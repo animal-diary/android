@@ -126,6 +126,18 @@
         <attr name="tb_text" format="string" />
         <attr name="tb_leftIcon" format="reference" />
         <attr name="tb_rightIcon" format="reference" />
+        <!-- State 속성 -->
+        <attr name="tb_state" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="pressed" value="1" />
+            <enum name="disabled" value="2" />
+        </attr>
+
+        <!-- Hierarchy 속성 -->
+        <attr name="tb_hierarchy" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="neutral" value="1" />
+        </attr>
     </declare-styleable>
 
 </resources>
