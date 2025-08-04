@@ -20,19 +20,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title"
-                android:textSize="14sp"
                 android:textColor="@color/fg_neutral_primary"
-                android:fontFamily="@font/pretendard_medium" />
+                style="@style/Text_Title14Strong"/>
 
             <TextView
                 android:id="@+id/sf_requiredMark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="*"
-                android:textSize="14sp"
                 android:layout_marginStart="@dimen/spacing_xs"
                 android:textColor="@color/fg_accent_red_normal"
-                android:fontFamily="@font/pretendard_medium" />
+                style="@style/Text_Title14Strong" />
         </LinearLayout>
 
         <!-- Description -->
@@ -41,9 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="description"
-            android:textSize="16sp"
             android:textColor="@color/fg_neutral_tertiary"
-            android:fontFamily="@font/pretendard_regular"
+            style="@style/Text_Body16Normal"
             android:layout_marginBottom="@dimen/spacing_xs" />
 
         <!-- Input Field with Icon -->
@@ -63,9 +60,8 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="Choose an option"
-                android:textSize="16sp"
                 android:textColor="@color/fg_neutral_tertiary"
-                android:fontFamily="@font/pretendard_regular" />
+                style="@style/Text_Body16Normal" />
 
             <Space
                 android:layout_width="@dimen/spacing_xs"
@@ -86,9 +82,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Error text"
-            android:textSize="14sp"
             android:textColor="@color/fg_accent_red_normal"
-            android:fontFamily="@font/pretendard_regular"
+            style="@style/Text_Body16Normal"
             android:layout_marginTop="@dimen/spacing_xs" />
     </LinearLayout>
 </merge>
