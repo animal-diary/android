@@ -27,6 +27,7 @@
         <activity android:name=".TestTextAreaActivity" />
         <activity android:name=".TestTextInputActivity" />
         <activity android:name=".TestSelectFieldActivity" />
+        <activity android:name=".TestSelectCardActivity" />
     </application>
 
 </manifest>
