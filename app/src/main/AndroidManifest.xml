@@ -26,6 +26,7 @@
         <activity android:name=".TestVitalButtonActivity" />
         <activity android:name=".TestTextAreaActivity" />
         <activity android:name=".TestTextInputActivity" />
+        <activity android:name=".TestTopNavigationActivity" />
         <activity android:name=".TestSelectFieldActivity" />
         <activity android:name=".TestSelectCardActivity" />
     </application>

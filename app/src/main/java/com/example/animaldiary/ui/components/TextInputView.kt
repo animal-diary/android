@@ -45,39 +45,39 @@ class TextInputView @JvmOverloads constructor(
 
         // XML 속성 처리
         attrs?.let {
-            val a = context.obtainStyledAttributes(it, R.styleable.TextInputView, 0, 0)
+            val ti = context.obtainStyledAttributes(it, R.styleable.TextInputView, 0, 0)
             try {
-                a.getString(R.styleable.TextInputView_ti_title)?.let {
+                ti.getString(R.styleable.TextInputView_ti_title)?.let {
                     title.text = it
                     title.visibility = VISIBLE
                 }
-                a.getBoolean(R.styleable.TextInputView_ti_required, false).let {
+                ti.getBoolean(R.styleable.TextInputView_ti_required, false).let {
                     requiredMark.visibility = if (it) VISIBLE else GONE
                 }
-                a.getString(R.styleable.TextInputView_ti_description)?.let {
+                ti.getString(R.styleable.TextInputView_ti_description)?.let {
                     description.text = it
                     description.visibility = VISIBLE
                 }
-                a.getString(R.styleable.TextInputView_ti_placeholder)?.let {
+                ti.getString(R.styleable.TextInputView_ti_placeholder)?.let {
                     input.hint = it
                 }
-                val iconRes = a.getResourceId(R.styleable.TextInputView_ti_icon, 0)
+                val iconRes = ti.getResourceId(R.styleable.TextInputView_ti_icon, 0)
                 if (iconRes != 0) {
                     icon.setImageResource(iconRes)
                     icon.visibility = VISIBLE
                 }
-                a.getString(R.styleable.TextInputView_ti_errorText)?.let {
+                ti.getString(R.styleable.TextInputView_ti_errorText)?.let {
                     errorText.text = it
                 }
 
-                when (a.getInt(R.styleable.TextInputView_ti_state, 0)) {
+                when (ti.getInt(R.styleable.TextInputView_ti_state, 0)) {
                     0 -> setDefaultState()
                     1 -> setFocusedState()
                     2 -> setErrorState()
                     3 -> setDisabledState()
                 }
             } finally {
-                a.recycle()
+                ti.recycle()
             }
         }
 
