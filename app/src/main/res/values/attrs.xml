@@ -61,6 +61,17 @@
         </attr>
     </declare-styleable>
 
+    <!-- SelectCardView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="SelectCardView">
+        <attr name="sc_align" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="left" value="1"/>
+        </attr>
+        <attr name="sc_showIllust" format="boolean"/>
+        <attr name="sc_title" format="string" />
+        <attr name="sc_description" format="string" />
+    </declare-styleable>
+
     <!-- TextInputView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TextInputView">
         <attr name="ti_title" format="string" />
