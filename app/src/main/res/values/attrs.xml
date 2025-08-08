@@ -47,19 +47,21 @@
 
     <!-- SelectFieldView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="SelectFieldView">
-        <attr name="sf_title" format="string" />
-        <attr name="sf_description" format="string" />
-        <attr name="sf_placeholder" format="string" />
-        <attr name="sf_required" format="boolean" />
-        <attr name="sf_icon" format="reference" />
-        <attr name="sf_errorText" format="string" />
-        <attr name="sf_state" format="enum">
-            <enum name="normal" value="0" />
-            <enum name="focused" value="1" />
-            <enum name="error" value="2" />
-            <enum name="disabled" value="3" />
-        </attr>
-      
+    <attr name="sf_title" format="string" />
+    <attr name="sf_description" format="string" />
+    <attr name="sf_placeholder" format="string" />
+    <attr name="sf_required" format="boolean" />
+    <attr name="sf_icon" format="reference" />
+    <attr name="sf_errorText" format="string" />
+    <attr name="sf_state" format="enum">
+        <enum name="normal" value="0" />
+        <enum name="focused" value="1" />
+        <enum name="error" value="2" />
+        <enum name="disabled" value="3" />
+    </attr>
+    </declare-styleable>
+
+
     <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TopNavigationView">
         <attr name="tnv_title" format="string" />
@@ -104,6 +106,18 @@
         <attr name="tb_text" format="string" />
         <attr name="tb_leftIcon" format="reference" />
         <attr name="tb_rightIcon" format="reference" />
+    </declare-styleable>
+
+    <!-- DatePickerView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="DatePickerView">
+        <attr name="dp_showDay" format="boolean" />
+        <attr name="dp_isSolar" format="boolean" />
+    </declare-styleable>
+
+    <!-- DatePickerItemView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="DatePickerItemView">
+        <attr name="dpi_text" format="string" />
+        <attr name="dpi_selected" format="boolean" />
     </declare-styleable>
 
 </resources>
