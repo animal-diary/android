@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:text="Error text"
             android:textColor="@color/fg_accent_red_normal"
-            style="@style/Text_Body16Normal"
+            style="@style/Text_Body14Normal"
             android:layout_marginTop="@dimen/spacing_xs" />
     </LinearLayout>
 </merge>

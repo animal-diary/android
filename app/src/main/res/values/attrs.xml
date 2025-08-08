@@ -55,6 +55,24 @@
         </attr>
     </declare-styleable>
 
+    <!-- ModalView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="ModalView">
+        <attr name="modal_Title" format="string" />
+        <attr name="modal_Description" format="string" />
+        <attr name="modal_content" format="string" />
+        <attr name="leftButtonText" format="string" />
+        <attr name="rightButtonText" format="string" />
+        <attr name="showTitle" format="boolean" />
+        <attr name="showDescription" />
+        <attr name="showContent" format="boolean" />
+        <attr name="showLeftButton" format="boolean" />
+        <attr name="showRightButton" format="boolean" />
+        <attr name="modal_align" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="left" value="1"/>
+        </attr>
+    </declare-styleable>
+
   <!-- SelectFieldView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="SelectFieldView">
         <attr name="sf_title" format="string" />
@@ -70,15 +88,6 @@
             <enum name="disabled" value="3" />
         </attr>
     </declare-styleable>
-      
-    <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
-    <declare-styleable name="TopNavigationView">
-        <attr name="tnv_title" format="string" />
-        <attr name="tnv_showTitle" format="boolean" />
-        <attr name="tnv_leftIcon" format="reference" />
-        <attr name="tnv_rightIcon1" format="reference" />
-        <attr name="tnv_rightIcon2" format="reference" />
-    </declare-styleable>
 
     <!-- SelectCardView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="SelectCardView">
@@ -89,6 +98,15 @@
         <attr name="sc_showIllust" format="boolean"/>
         <attr name="sc_title" format="string" />
         <attr name="sc_description" format="string" />
+    </declare-styleable>
+
+    <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="TopNavigationView">
+        <attr name="tnv_title" format="string" />
+        <attr name="tnv_showTitle" format="boolean" />
+        <attr name="tnv_leftIcon" format="reference" />
+        <attr name="tnv_rightIcon1" format="reference" />
+        <attr name="tnv_rightIcon2" format="reference" />
     </declare-styleable>
 
     <!-- TextInputView 컴포넌트 커스텀 속성 정의 -->

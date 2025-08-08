@@ -29,6 +29,7 @@
         <activity android:name=".test.TestTopNavigationActivity" />
         <activity android:name=".test.TestSelectFieldActivity" />
         <activity android:name=".test.TestSelectCardActivity" />
+        <activity android:name=".test.TestModalActivity"/>
     </application>
 
 </manifest>

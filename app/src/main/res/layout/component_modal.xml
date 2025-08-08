@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/modal_root"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_modal_default"
+        android:paddingTop="@dimen/padding_2xl"
+        android:paddingStart="@dimen/padding_xl"
+        android:paddingEnd="@dimen/padding_xl"
+        android:paddingBottom="@dimen/padding_xl">
+
+        <LinearLayout
+            android:id="@+id/modal_titleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/modal_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Title"
+                android:textColor="@color/fg_neutral_primary"
+                style="@style/Text_Title20Strong"/>
+
+            <TextView
+                android:id="@+id/modal_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:gravity="center"
+                android:text="description"
+                android:textColor="@color/fg_neutral_secondary"
+                style="@style/Text_Body16Normal"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/modal_scrollview"
+            android:layout_width="280dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:layout_marginBottom="@dimen/spacing_md">
+
+            <LinearLayout
+                android:id="@+id/modal_content_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_modal_replace">
+
+                <TextView
+                    android:id="@+id/modal_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Replace Contents"
+                    android:textColor="@color/fg_neutral_tertiary"
+                    style="@style/Text_Body16Normal"
+                    android:gravity="center" />
+            </LinearLayout>
+        </ScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/modal_btn_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:text="Action"
+                android:textColor="@color/fg_neutral_secondary"
+                style="@style/Text_ButtonMd" />
+
+            <Button
+                android:id="@+id/modal_btn_right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Action"
+                android:textColor="@color/fg_onprimary"
+                style="@style/Text_ButtonMd"/>
+        </LinearLayout>
+    </LinearLayout>
+</merge>
