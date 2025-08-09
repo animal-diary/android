@@ -55,13 +55,6 @@
         </attr>
     </declare-styleable>
 
-    <!-- 미리 정의된 아바타 크기들 -->
-    <dimen name="avatar_size_small">32dp</dimen>
-    <dimen name="avatar_size_medium">48dp</dimen>
-    <dimen name="avatar_size_large">64dp</dimen>
-    <dimen name="avatar_size_extra_large">80dp</dimen>
-    <dimen name="avatar_size_xxl">96dp</dimen>
-
   <!-- SelectFieldView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="SelectFieldView">
         <attr name="sf_title" format="string" />
@@ -76,6 +69,7 @@
             <enum name="error" value="2" />
             <enum name="disabled" value="3" />
         </attr>
+    </declare-styleable>
       
     <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TopNavigationView">
@@ -84,6 +78,17 @@
         <attr name="tnv_leftIcon" format="reference" />
         <attr name="tnv_rightIcon1" format="reference" />
         <attr name="tnv_rightIcon2" format="reference" />
+    </declare-styleable>
+
+    <!-- SelectCardView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="SelectCardView">
+        <attr name="sc_align" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="left" value="1"/>
+        </attr>
+        <attr name="sc_showIllust" format="boolean"/>
+        <attr name="sc_title" format="string" />
+        <attr name="sc_description" format="string" />
     </declare-styleable>
 
     <!-- TextInputView 컴포넌트 커스텀 속성 정의 -->
@@ -121,6 +126,18 @@
         <attr name="tb_text" format="string" />
         <attr name="tb_leftIcon" format="reference" />
         <attr name="tb_rightIcon" format="reference" />
+        <!-- State 속성 -->
+        <attr name="tb_state" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="pressed" value="1" />
+            <enum name="disabled" value="2" />
+        </attr>
+
+        <!-- Hierarchy 속성 -->
+        <attr name="tb_hierarchy" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="neutral" value="1" />
+        </attr>
     </declare-styleable>
 
 </resources>

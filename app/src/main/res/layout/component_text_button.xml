@@ -24,8 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Text Button"
-            android:fontFamily="@font/pretendard_medium"
-            android:textSize="14sp" />
+            style="@style/Text_ButtonSm"/>
 
         <!-- Right Icon -->
         <ImageView

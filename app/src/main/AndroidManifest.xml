@@ -22,12 +22,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TestTextButtonActivity" />
-        <activity android:name=".TestVitalButtonActivity" />
-        <activity android:name=".TestTextAreaActivity" />
-        <activity android:name=".TestTextInputActivity" />
-        <activity android:name=".TestSelectFieldActivity" />
-        <activity android:name=".TestTopNavigationActivity" />
+        <activity android:name=".test.TestTextButtonActivity" />
+        <activity android:name=".test.TestVitalButtonActivity" />
+        <activity android:name=".test.TestTextAreaActivity" />
+        <activity android:name=".test.TestTextInputActivity" />
+        <activity android:name=".test.TestTopNavigationActivity" />
+        <activity android:name=".test.TestSelectFieldActivity" />
+        <activity android:name=".test.TestSelectCardActivity" />
     </application>
 
 </manifest>
