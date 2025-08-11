@@ -8,8 +8,7 @@
     android:paddingTop="@dimen/padding_lg"
     android:paddingRight="@dimen/padding_md"
     android:paddingLeft="@dimen/padding_md"
-    android:paddingBottom="@dimen/padding_sm"
-    android:background="@drawable/bg_action_button_secondary_filled_default">
+    android:paddingBottom="@dimen/padding_sm">
 
     <ImageView
         android:id="@+id/illustIcon"
