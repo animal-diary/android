@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.animaldiary.R
@@ -21,8 +20,7 @@ class ModalView @JvmOverloads constructor(
     private val tvDescription: TextView
     private val tvContent: TextView
     private val contentContainer: LinearLayout
-    private val leftButton: Button
-    private val rightButton: Button
+    private val buttonContainer: ButtonContainerView
 
     private var align: Int = 0 // 0: center, 1: left
 
@@ -36,8 +34,7 @@ class ModalView @JvmOverloads constructor(
         tvDescription = findViewById(R.id.modal_description)
         tvContent = findViewById(R.id.modal_content)
         contentContainer = findViewById(R.id.modal_content_container)
-        leftButton = findViewById(R.id.modal_btn_left)
-        rightButton = findViewById(R.id.modal_btn_right)
+        buttonContainer = findViewById(R.id.modal_button_container)
 
         // XML 속성 처리
         attrs?.let {
@@ -56,10 +53,16 @@ class ModalView @JvmOverloads constructor(
                 updateAlignment()
 
                 // 버튼 텍스트 및 가시성
-                setLeftButtonText(a.getString(R.styleable.ModalView_leftButtonText))
-                setRightButtonText(a.getString(R.styleable.ModalView_rightButtonText))
-                showLeftButton(a.getBoolean(R.styleable.ModalView_showLeftButton, true))
-                showRightButton(a.getBoolean(R.styleable.ModalView_showRightButton, true))
+                val leftButtonText = a.getString(R.styleable.ModalView_leftButtonText)
+                val rightButtonText = a.getString(R.styleable.ModalView_rightButtonText)
+                val showLeftButton = a.getBoolean(R.styleable.ModalView_showLeftButton, true)
+                val showRightButton = a.getBoolean(R.styleable.ModalView_showRightButton, true)
+
+                // ButtonContainerView의 Public 메서드를 사용하여 설정
+                setLeftButtonText(leftButtonText)
+                setRightButtonText(rightButtonText)
+                showLeftButton(showLeftButton)
+                showRightButton(showRightButton)
 
             } finally {
                 a.recycle()
@@ -109,19 +112,19 @@ class ModalView @JvmOverloads constructor(
     }
 
     fun setLeftButtonText(text: String?) {
-        leftButton.text = text
+        buttonContainer.setSecondaryText(text)
     }
 
     fun setRightButtonText(text: String?) {
-        rightButton.text = text
+        buttonContainer.setPrimaryText(text)
     }
 
     fun showLeftButton(show: Boolean) {
-        leftButton.visibility = if (show) View.VISIBLE else View.GONE
+        buttonContainer.showSecondaryButton(show)
     }
 
     fun showRightButton(show: Boolean) {
-        rightButton.visibility = if (show) View.VISIBLE else View.GONE
+        buttonContainer.showPrimaryButton(show)
     }
 
     fun getContentContainer(): LinearLayout {
@@ -129,10 +132,10 @@ class ModalView @JvmOverloads constructor(
     }
 
     fun setOnLeftButtonClickListener(listener: (View) -> Unit) {
-        leftButton.setOnClickListener(listener)
+        buttonContainer.setOnSecondaryButtonClickListener(listener)
     }
 
     fun setOnRightButtonClickListener(listener: (View) -> Unit) {
-        rightButton.setOnClickListener(listener)
+        buttonContainer.setOnPrimaryButtonClickListener(listener)
     }
 }

@@ -4,8 +4,9 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.*
-import androidx.core.content.ContextCompat
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.core.view.isVisible
 import com.example.animaldiary.R
 
@@ -15,13 +16,13 @@ class SelectFieldView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val titleText: TextView
-    private val requiredMark: TextView
-    private val descriptionText: TextView
-    private val inputContainer: LinearLayout
-    private val valueText: TextView
-    private val icon: ImageView
-    private val errorText: TextView
+    private val titleText: TextView?
+    private val requiredMark: TextView?
+    private val descriptionText: TextView?
+    private val inputContainer: LinearLayout?
+    private val valueText: TextView?
+    private val icon: ImageView?
+    private val errorText: TextView?
 
     init {
         orientation = VERTICAL
@@ -86,38 +87,38 @@ class SelectFieldView @JvmOverloads constructor(
 
     // States
     fun setNormalState() {
-        inputContainer.setBackgroundResource(R.drawable.bg_text_input_default)
-        errorText.visibility = View.GONE
-        valueText.isEnabled = true
-        icon.isEnabled = true
+        inputContainer?.setBackgroundResource(R.drawable.bg_text_input_default)
+        errorText?.visibility = View.GONE
+        valueText?.isEnabled = true
+        icon?.isEnabled = true
     }
 
     fun setFocusedState() {
-        inputContainer.setBackgroundResource(R.drawable.bg_text_input_active)
-        errorText.visibility = View.GONE
+        inputContainer?.setBackgroundResource(R.drawable.bg_text_input_active)
+        errorText?.visibility = View.GONE
     }
 
     fun setErrorState() {
-        inputContainer.setBackgroundResource(R.drawable.bg_text_input_error)
-        errorText.visibility = View.VISIBLE
+        inputContainer?.setBackgroundResource(R.drawable.bg_text_input_error)
+        errorText?.visibility = View.VISIBLE
     }
 
     fun setDisabledState() {
-        inputContainer.setBackgroundResource(R.drawable.bg_text_input_disabled)
-        valueText.isEnabled = false
-        icon.isEnabled = false
+        inputContainer?.setBackgroundResource(R.drawable.bg_text_input_disabled)
+        valueText?.isEnabled = false
+        icon?.isEnabled = false
     }
 
     fun setValue(value: String) {
-        valueText.text = value
+        valueText?.text = value
     }
 
     fun getValue(): String {
-        return valueText.text.toString()
+        return valueText?.text.toString()
     }
 
     fun setOnClickListenerForInput(listener: () -> Unit) {
-        valueText.setOnClickListener { listener() }
-        icon.setOnClickListener { listener() }
+        valueText?.setOnClickListener { listener() }
+        icon?.setOnClickListener { listener() }
     }
 }

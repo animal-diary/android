@@ -23,6 +23,12 @@ class ActionButtonView @JvmOverloads constructor(
     private val rightIcon: ImageView
     private var buttonHeight: Int = 0
 
+    var ab_text: String?
+        get() = buttonText.text.toString()
+        set(value) {
+            buttonText.text = value
+        }
+
     init {
         // 기본값들을 명시적으로 설정
         setPadding(0, 0, 0, 0)

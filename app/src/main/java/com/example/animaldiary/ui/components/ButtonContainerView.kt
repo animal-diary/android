@@ -3,6 +3,7 @@ package com.example.animaldiary.ui.components
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.core.view.isVisible
@@ -140,5 +141,35 @@ class ButtonContainerView @JvmOverloads constructor(
                 leftIcon, rightIcon, leftIconVisible, rightIconVisible
             )
         }
+    }
+
+    fun setPrimaryText(text: String?) {
+        primaryButtonHorizontal.ab_text = text
+        primaryButtonVertical.ab_text = text
+    }
+
+    fun setSecondaryText(text: String?) {
+        secondaryButtonHorizontal.ab_text = text
+        secondaryButtonVertical.ab_text = text
+    }
+
+    fun showPrimaryButton(show: Boolean) {
+        primaryButtonHorizontal.isVisible = show
+        primaryButtonVertical.isVisible = show
+    }
+
+    fun showSecondaryButton(show: Boolean) {
+        secondaryButtonHorizontal.isVisible = show
+        secondaryButtonVertical.isVisible = show
+    }
+
+    fun setOnPrimaryButtonClickListener(listener: (View) -> Unit) {
+        primaryButtonHorizontal.setOnClickListener(listener)
+        primaryButtonVertical.setOnClickListener(listener)
+    }
+
+    fun setOnSecondaryButtonClickListener(listener: (View) -> Unit) {
+        secondaryButtonHorizontal.setOnClickListener(listener)
+        secondaryButtonVertical.setOnClickListener(listener)
     }
 }
