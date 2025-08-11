@@ -38,6 +38,8 @@
         <activity android:name=".TestSelectFieldActivity" />
         <activity android:name=".TestTopNavigationActivity" />
         <activity android:name=".TestDatePickerDialogActivity"/>
+        <activity android:name=".TestTagActivity" />
+
     </application>
 
 </manifest>
