@@ -30,6 +30,7 @@
         <activity android:name=".test.TestSelectFieldActivity" />
         <activity android:name=".test.TestSelectCardActivity" />
         <activity android:name=".test.TestModalActivity"/>
+        <activity android:name=".test.TestActionButtonActivity" />
     </application>
 
 </manifest>
