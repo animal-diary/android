@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/buttonContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="0dp"
+    android:layout_margin="0dp"
+    android:paddingStart="@dimen/padding_lg"
+    android:paddingEnd="@dimen/padding_lg">
+
+    <!-- Left Icon -->
+    <ImageView
+        android:id="@+id/leftIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_margin="0dp"
+        android:src="@drawable/ic_plus_line" />
+
+    <!-- Text -->
+    <TextView
+        android:id="@+id/buttonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:text="Action"
+        style="@style/Text_ButtonLg" />
+
+    <!-- Right Icon -->
+    <ImageView
+        android:id="@+id/rightIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_margin="0dp"
+        android:src="@drawable/ic_plus_line" />
+</LinearLayout>
