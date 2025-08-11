@@ -202,21 +202,43 @@ class DatePickerDialog(
     private fun updateYearSelection() {
         yearItems.forEachIndexed { index, item ->
             val year = Calendar.getInstance().get(Calendar.YEAR) - 10 + index
-            item.setItemSelected(year == selectedYear)
+            val selected = (year == selectedYear)
+            item.setItemSelected(selected)
+            if (selected) {
+                yearContainer.post {
+                    val centerY = (item.top + item.height / 2) - (yearContainer.height / 2)
+                    yearContainer.smoothScrollTo(0, centerY.coerceAtLeast(0))
+                }
+            }
         }
     }
 
     private fun updateMonthSelection() {
         monthItems.forEachIndexed { index, item ->
-            item.setItemSelected(index + 1 == selectedMonth)
+            val selected = (index + 1 == selectedMonth)
+            item.setItemSelected(selected)
+            if (selected) {
+                monthContainer.post {
+                    val centerY = (item.top + item.height / 2) - (monthContainer.height / 2)
+                    monthContainer.smoothScrollTo(0, centerY.coerceAtLeast(0))
+                }
+            }
         }
     }
 
     private fun updateDaySelection() {
         dayItems.forEachIndexed { index, item ->
-            item.setItemSelected(index + 1 == selectedDay)
+            val selected = (index + 1 == selectedDay)
+            item.setItemSelected(selected)
+            if (selected) {
+                dayContainer.post {
+                    val centerY = (item.top + item.height / 2) - (dayContainer.height / 2)
+                    dayContainer.smoothScrollTo(0, centerY.coerceAtLeast(0))
+                }
+            }
         }
     }
+
 
     private fun updateDayItems() {
         val calendar = Calendar.getInstance().apply {
