@@ -6,6 +6,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import com.example.animaldiary.R
 
@@ -20,6 +21,7 @@ class ModalView @JvmOverloads constructor(
     private val tvDescription: TextView
     private val tvContent: TextView
     private val contentContainer: LinearLayout
+    private val modalScrollView: ScrollView
     private val buttonContainer: ButtonContainerView
 
     private var align: Int = 0 // 0: center, 1: left
@@ -34,6 +36,7 @@ class ModalView @JvmOverloads constructor(
         tvDescription = findViewById(R.id.modal_description)
         tvContent = findViewById(R.id.modal_content)
         contentContainer = findViewById(R.id.modal_content_container)
+        modalScrollView = findViewById(R.id.modal_scrollview)
         buttonContainer = findViewById(R.id.modal_button_container)
 
         // XML 속성 처리
@@ -108,7 +111,7 @@ class ModalView @JvmOverloads constructor(
     }
 
     fun showContent(show: Boolean) {
-        contentContainer.visibility = if (show) View.VISIBLE else View.GONE
+        modalScrollView.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     fun setLeftButtonText(text: String?) {
