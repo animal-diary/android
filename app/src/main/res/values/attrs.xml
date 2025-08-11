@@ -120,4 +120,19 @@
         <attr name="dpi_selected" format="boolean" />
     </declare-styleable>
 
-</resources>
+    <!-- TAG 컴포넌트 커스텀 속성 정의 -->
+        <declare-styleable name="TagView">
+            <attr name="tag_text" format="string"/>
+            <attr name="tag_type" format="enum">
+                <enum name="gray" value="0"/>
+                <enum name="red" value="1"/>
+                <enum name="green" value="2"/>
+                <enum name="blue" value="3"/>
+                <enum name="yellow" value="4"/>
+                <enum name="pink" value="5"/>
+                <enum name="white" value="6"/>
+                <enum name="orange" value="7"/>
+            </attr>
+            <attr name="tag_showPlus" format="boolean"/>
+        </declare-styleable>
+    </resources>
