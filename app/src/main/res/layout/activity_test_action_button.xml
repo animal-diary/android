@@ -362,5 +362,45 @@
                 android:layout_marginBottom="8dp"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ActionButtonIllustView Test"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <com.example.animaldiary.ui.components.ActionButtonIllustView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:abi_text="Action"
+                app:abi_illust="@drawable/ic_profile_solid"
+                app:abi_state="normal"
+                android:layout_marginBottom="16dp"/>
+
+            <com.example.animaldiary.ui.components.ActionButtonIllustView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:abi_text="Action"
+                app:abi_illust="@drawable/ic_profile_solid"
+                app:abi_state="pressed"
+                android:layout_marginBottom="16dp"/>
+
+            <com.example.animaldiary.ui.components.ActionButtonIllustView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:abi_text="Action"
+                app:abi_illust="@drawable/ic_profile_solid"
+                app:abi_state="disabled"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

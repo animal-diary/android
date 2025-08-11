@@ -30,6 +30,17 @@
         </attr>
     </declare-styleable>
 
+    <!-- ActionButton(illust) 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="ActionButtonIllustView">
+        <attr name="abi_text" format="string" />
+        <attr name="abi_illust" format="reference" />
+        <attr name="abi_state" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="pressed" value="1" />
+            <enum name="disabled" value="2" />
+        </attr>
+    </declare-styleable>
+
     <!-- Avatar 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="AvatarView">
         <attr name="showProfile" format="boolean" />

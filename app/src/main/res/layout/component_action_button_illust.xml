@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/illustButtonContainer"
+    android:layout_width="161dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingTop="@dimen/padding_lg"
+    android:paddingRight="@dimen/padding_md"
+    android:paddingLeft="@dimen/padding_md"
+    android:paddingBottom="@dimen/padding_sm"
+    android:background="@drawable/bg_action_button_secondary_filled_default">
+
+    <ImageView
+        android:id="@+id/illustIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/circle_background_base"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="@dimen/spacing_sm"/>
+
+    <TextView
+        android:id="@+id/buttonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Action"
+        style="@style/Text_ButtonMd"
+        android:textColor="@color/fg_neutral_primary"/>
+</LinearLayout>
