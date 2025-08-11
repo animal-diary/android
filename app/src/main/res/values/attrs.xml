@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ActionButton 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="ActionButtonView">
+        <attr name="ab_text" format="string" />
+        <attr name="ab_leftIcon" format="reference" />
+        <attr name="ab_rightIcon" format="reference" />
+        <attr name="ab_leftIconVisible" format="boolean" />
+        <attr name="ab_rightIconVisible" format="boolean" />
+        <attr name="ab_size" format="enum">
+            <enum name="sm" value="0" />
+            <enum name="md" value="1" />
+            <enum name="lg" value="2" />
+        </attr>
+        <attr name="ab_hierarchy" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="tertiary" value="2" />
+        </attr>
+        <attr name="ab_type" format="enum">
+            <enum name="filled" value="0" />
+            <enum name="subtle" value="1" />
+            <enum name="ghost" value="2" />
+            <enum name="outline" value="3" />
+        </attr>
+        <attr name="ab_state" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="pressed" value="1" />
+            <enum name="disabled" value="2" />
+        </attr>
+    </declare-styleable>
+
     <!-- Avatar 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="AvatarView">
         <attr name="showProfile" format="boolean" />
@@ -55,13 +85,6 @@
         </attr>
     </declare-styleable>
 
-    <!-- 미리 정의된 아바타 크기들 -->
-    <dimen name="avatar_size_small">32dp</dimen>
-    <dimen name="avatar_size_medium">48dp</dimen>
-    <dimen name="avatar_size_large">64dp</dimen>
-    <dimen name="avatar_size_extra_large">80dp</dimen>
-    <dimen name="avatar_size_xxl">96dp</dimen>
-
   <!-- SelectFieldView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="SelectFieldView">
         <attr name="sf_title" format="string" />
@@ -76,6 +99,7 @@
             <enum name="error" value="2" />
             <enum name="disabled" value="3" />
         </attr>
+    </declare-styleable>
       
     <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TopNavigationView">

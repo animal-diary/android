@@ -45,4 +45,14 @@
     <dimen name="grid_gutter">12dp</dimen>
     <dimen name="grid_margin">20dp</dimen>
 
+    <!-- 액션 버튼 높이 -->
+    <dimen name="action_button_height_sm">32dp</dimen>
+    <dimen name="action_button_height_md">48dp</dimen>
+    <dimen name="action_button_height_lg">56dp</dimen>
+
+    <!-- 액션 버튼 아이콘 크기 -->
+    <dimen name="icon_size_sm">16dp</dimen>
+    <dimen name="icon_size_md">20dp</dimen>
+    <dimen name="icon_size_lg">24dp</dimen>
+
 </resources>
