@@ -39,6 +39,8 @@
         <activity android:name=".TestTopNavigationActivity" />
         <activity android:name=".TestDatePickerDialogActivity"/>
         <activity android:name=".TestTagActivity" />
+        <activity android:name=".TestInfoMessageBoxActivity" />
+
 
     </application>
 
