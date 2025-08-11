@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/horizontalContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="@dimen/padding_xl"
+        android:paddingBottom="@dimen/padding_xl"
+        android:visibility="gone">
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/secondaryActionButtonHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/spacing_sm"
+            app:ab_text="Action"
+            app:ab_size="lg"
+            app:ab_hierarchy="secondary"
+            app:ab_type="subtle"
+            app:ab_state="normal" />
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/primaryActionButtonHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:ab_text="Action"
+            app:ab_size="lg"
+            app:ab_hierarchy="primary"
+            app:ab_type="filled"
+            app:ab_state="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/verticalContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/padding_xl"
+        android:paddingBottom="@dimen/padding_xl"
+        android:visibility="visible">
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/primaryActionButtonVertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_sm"
+            app:ab_text="Action"
+            app:ab_size="lg"
+            app:ab_hierarchy="primary"
+            app:ab_type="filled"
+            app:ab_state="normal" />
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/secondaryActionButtonVertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ab_text="Action"
+            app:ab_size="lg"
+            app:ab_hierarchy="secondary"
+            app:ab_type="subtle"
+            app:ab_state="normal" />
+    </LinearLayout>
+</FrameLayout>

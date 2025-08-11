@@ -41,6 +41,71 @@
         </attr>
     </declare-styleable>
 
+    <!-- ButtonContainerView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="ButtonContainerView">
+        <attr name="bc_alignment" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="bc_showAdditionalButton" format="boolean" />
+
+        <!-- 첫 번째 버튼 (Primary) 속성들 -->
+        <attr name="bc_primaryText" format="string" />
+        <attr name="bc_primarySize" format="enum">
+            <enum name="sm" value="0" />
+            <enum name="md" value="1" />
+            <enum name="lg" value="2" />
+        </attr>
+        <attr name="bc_primaryHierarchy" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="tertiary" value="2" />
+        </attr>
+        <attr name="bc_primaryType" format="enum">
+            <enum name="filled" value="0" />
+            <enum name="subtle" value="1" />
+            <enum name="ghost" value="2" />
+            <enum name="outline" value="3" />
+        </attr>
+        <attr name="bc_primaryState" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="pressed" value="1" />
+            <enum name="disabled" value="2" />
+        </attr>
+        <attr name="bc_primaryLeftIcon" format="reference" />
+        <attr name="bc_primaryRightIcon" format="reference" />
+        <attr name="bc_primaryLeftIconVisible" format="boolean" />
+        <attr name="bc_primaryRightIconVisible" format="boolean" />
+
+        <!-- 두 번째 버튼 (Secondary) 속성들 -->
+        <attr name="bc_secondaryText" format="string" />
+        <attr name="bc_secondarySize" format="enum">
+            <enum name="sm" value="0" />
+            <enum name="md" value="1" />
+            <enum name="lg" value="2" />
+        </attr>
+        <attr name="bc_secondaryHierarchy" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="tertiary" value="2" />
+        </attr>
+        <attr name="bc_secondaryType" format="enum">
+            <enum name="filled" value="0" />
+            <enum name="subtle" value="1" />
+            <enum name="ghost" value="2" />
+            <enum name="outline" value="3" />
+        </attr>
+        <attr name="bc_secondaryState" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="pressed" value="1" />
+            <enum name="disabled" value="2" />
+        </attr>
+        <attr name="bc_secondaryLeftIcon" format="reference" />
+        <attr name="bc_secondaryRightIcon" format="reference" />
+        <attr name="bc_secondaryLeftIconVisible" format="boolean" />
+        <attr name="bc_secondaryRightIconVisible" format="boolean" />
+    </declare-styleable>
+
     <!-- Avatar 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="AvatarView">
         <attr name="showProfile" format="boolean" />

@@ -371,10 +371,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ActionButtonIllustView Test"
-                android:textSize="24sp"
+                android:text="ActionButtonIllust"
                 android:textStyle="bold"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
 
             <com.example.animaldiary.ui.components.ActionButtonIllustView
                 android:layout_width="wrap_content"
@@ -399,6 +399,52 @@
                 app:abi_illust="@drawable/ic_profile_solid"
                 app:abi_state="disabled"
                 android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button Container"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+            <com.example.animaldiary.ui.components.ButtonContainerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:bc_alignment="horizontal"
+                app:bc_showAdditionalButton="true"
+                app:bc_primaryText="Action"
+                app:bc_primaryHierarchy="primary"
+                app:bc_primaryType="filled"
+                app:bc_primarySize="lg"
+                app:bc_secondaryText="Don't Use"
+                app:bc_secondaryHierarchy="tertiary"
+                app:bc_secondaryType="outline"
+                app:bc_secondarySize="lg"/>
+
+            <com.example.animaldiary.ui.components.ButtonContainerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bc_alignment="vertical"
+                app:bc_showAdditionalButton="true"
+                app:bc_primaryText="다음으로"
+                app:bc_primaryHierarchy="primary"
+                app:bc_primaryType="filled"
+                app:bc_primarySize="lg"
+                app:bc_secondaryText="먼저 둘러보고 등록할게요"
+                app:bc_secondaryHierarchy="secondary"
+                app:bc_secondaryType="filled"
+                app:bc_secondarySize="lg"/>
 
         </LinearLayout>
 

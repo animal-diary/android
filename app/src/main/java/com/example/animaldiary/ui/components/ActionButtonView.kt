@@ -2,6 +2,7 @@ package com.example.animaldiary.ui.components
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -95,6 +96,31 @@ class ActionButtonView @JvmOverloads constructor(
         }
     }
 
+    // 프로그래매틱하게 버튼 스타일을 업데이트하는 메서드 추가
+    fun updateButtonProgrammatically(
+        text: String,
+        size: Int,
+        hierarchy: Int,
+        type: Int,
+        state: Int,
+        leftIconResId: Int = 0,
+        rightIconResId: Int = 0,
+        isLeftIconVisible: Boolean = false,
+        isRightIconVisible: Boolean = false
+    ) {
+        buttonText.text = text
+
+        // 먼저 크기 설정
+        updateButtonSize(size)
+        updateTextStyle(size)
+
+        // 그 다음 아이콘과 패딩 설정
+        updateIconsAndPadding(leftIconResId, rightIconResId, isLeftIconVisible, isRightIconVisible, size)
+
+        // 마지막으로 버튼 상태 설정
+        updateButtonState(hierarchy, type, state)
+    }
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         // 높이를 고정값으로 설정
         val fixedHeightSpec = MeasureSpec.makeMeasureSpec(buttonHeight, MeasureSpec.EXACTLY)
@@ -107,6 +133,11 @@ class ActionButtonView @JvmOverloads constructor(
             1 -> buttonText.setTextAppearance(context, R.style.Text_ButtonMd)
             2 -> buttonText.setTextAppearance(context, R.style.Text_ButtonLg)
         }
+
+        buttonText.gravity = Gravity.CENTER
+        val textParams = buttonText.layoutParams as? LinearLayout.LayoutParams
+        textParams?.weight = 1f  // 남은 공간을 모두 차지
+        buttonText.layoutParams = textParams
     }
 
     private fun updateButtonSize(size: Int) {
