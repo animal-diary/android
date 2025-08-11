@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/bg_page_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Primary Filled"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="normal"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="pressed"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="disabled"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Secondary Filled"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="secondary"
+                app:ab_type="filled"
+                app:ab_state="normal"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="secondary"
+                app:ab_type="filled"
+                app:ab_state="pressed"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="secondary"
+                app:ab_type="filled"
+                app:ab_state="disabled"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Secondary Subtle"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="secondary"
+                app:ab_type="subtle"
+                app:ab_state="normal"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="secondary"
+                app:ab_type="subtle"
+                app:ab_state="pressed"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="secondary"
+                app:ab_type="subtle"
+                app:ab_state="disabled"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tertiary Ghost"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="tertiary"
+                app:ab_type="ghost"
+                app:ab_state="normal"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="tertiary"
+                app:ab_type="ghost"
+                app:ab_state="pressed"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="tertiary"
+                app:ab_type="ghost"
+                app:ab_state="disabled"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tertiary Outline"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="tertiary"
+                app:ab_type="outline"
+                app:ab_state="normal"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                android:layout_marginBottom="8dp"
+                app:ab_hierarchy="tertiary"
+                app:ab_type="outline"
+                app:ab_state="pressed"
+                app:ab_size="md"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_hierarchy="tertiary"
+                app:ab_type="outline"
+                app:ab_state="disabled"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size Variations (Primary Filled)"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_size="sm"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="normal"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_size="md"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="normal"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_size="lg"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="normal"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Icon Variations (Primary Filled)"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_leftIcon="@drawable/ic_plus_line"
+                app:ab_leftIconVisible="true"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="normal"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_rightIcon="@drawable/ic_chevron_right"
+                app:ab_rightIconVisible="true"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="normal"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+            <com.example.animaldiary.ui.components.ActionButtonView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ab_text="Action"
+                app:ab_leftIcon="@drawable/ic_plus_line"
+                app:ab_leftIconVisible="true"
+                app:ab_rightIcon="@drawable/ic_chevron_right"
+                app:ab_rightIconVisible="true"
+                app:ab_hierarchy="primary"
+                app:ab_type="filled"
+                app:ab_state="normal"
+                app:ab_size="md"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

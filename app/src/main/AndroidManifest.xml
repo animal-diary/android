@@ -28,6 +28,7 @@
         <activity android:name=".TestTextInputActivity" />
         <activity android:name=".TestSelectFieldActivity" />
         <activity android:name=".TestTopNavigationActivity" />
+        <activity android:name=".TestActionButtonActivity" />
     </application>
 
 </manifest>
