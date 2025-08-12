@@ -2,17 +2,19 @@
 <resources>
     <!-- Avatar 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="AvatarView">
-        <!-- 프로필 표시 여부 -->
         <attr name="showProfile" format="boolean" />
-        <!-- 카메라 아이콘 표시 여부 -->
         <attr name="showCamera" format="boolean" />
-        <!-- 아바타 크기 (dp) -->
         <attr name="avatarSize" format="dimension" />
-        <!-- 프로필 이미지 리소스 -->
         <attr name="profileImage" format="reference" />
     </declare-styleable>
 
-    <!-- 미리 정의된 아바타 크기들 -->
+    <!-- 공통 속성들 -->
+    <attr name="showDescription" format="boolean" />
+    <attr name="showIllust" format="boolean" />
+    <attr name="showIcon" format="boolean" />
+    <attr name="illustDrawable" format="reference" />
+
+  <!-- 미리 정의된 아바타 크기들 -->
     <dimen name="avatar_size_small">32dp</dimen>
     <dimen name="avatar_size_medium">48dp</dimen>
     <dimen name="avatar_size_large">64dp</dimen>
@@ -21,22 +23,15 @@
 
     <!-- Carousel Item 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="CarouselItemView">
-        <!-- 각 요소 표시 여부 -->
-        <attr name="showDescription" format="boolean" />
-        <attr name="showIllust" format="boolean" />
-        <attr name="showIcon" format="boolean" />
+        <attr name="showDescription" />
+        <attr name="showIllust" />
+        <attr name="showIcon" />
         <attr name="showSub" format="boolean" />
-
-        <!-- 콘텐츠 -->
         <attr name="carouselTitle" format="string" />
         <attr name="carouselSubTitle" format="string" />
         <attr name="carouselDescription" format="string" />
-
-        <!-- 이미지 리소스 -->
-        <attr name="illustDrawable" format="reference" />
+        <attr name="illustDrawable" />
         <attr name="iconDrawable" format="reference" />
-
-        <!-- 상태 -->
         <attr name="carouselState" format="enum">
             <enum name="normal" value="0" />
             <enum name="focused" value="1" />
@@ -45,7 +40,22 @@
         </attr>
     </declare-styleable>
 
-    <!-- SelectFieldView 컴포넌트 커스텀 속성 정의 -->
+    <!-- List Item 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="ListItemView">
+        <attr name="showBackground" format="boolean" />
+        <attr name="showIllust" />
+        <attr name="showDescription" />
+        <attr name="showIcon" />
+        <attr name="listTitle" format="string" />
+        <attr name="listDescription" format="string" />
+        <attr name="illustDrawable" />
+        <attr name="listState" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="pressed" value="1" />
+        </attr>
+    </declare-styleable>
+
+  <!-- SelectFieldView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="SelectFieldView">
         <attr name="sf_title" format="string" />
         <attr name="sf_description" format="string" />
@@ -61,7 +71,6 @@
         </attr>
     </declare-styleable>
 
-
     <!-- TopNavigationView 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="TopNavigationView">
         <attr name="tnv_title" format="string" />
@@ -69,6 +78,17 @@
         <attr name="tnv_leftIcon" format="reference" />
         <attr name="tnv_rightIcon1" format="reference" />
         <attr name="tnv_rightIcon2" format="reference" />
+    </declare-styleable>
+
+    <!-- SelectCardView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="SelectCardView">
+        <attr name="sc_align" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="left" value="1"/>
+        </attr>
+        <attr name="sc_showIllust" format="boolean"/>
+        <attr name="sc_title" format="string" />
+        <attr name="sc_description" format="string" />
     </declare-styleable>
 
     <!-- TextInputView 컴포넌트 커스텀 속성 정의 -->
@@ -106,6 +126,18 @@
         <attr name="tb_text" format="string" />
         <attr name="tb_leftIcon" format="reference" />
         <attr name="tb_rightIcon" format="reference" />
+        <!-- State 속성 -->
+        <attr name="tb_state" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="pressed" value="1" />
+            <enum name="disabled" value="2" />
+        </attr>
+
+        <!-- Hierarchy 속성 -->
+        <attr name="tb_hierarchy" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="neutral" value="1" />
+        </attr>
     </declare-styleable>
 
     <!-- DatePickerView 컴포넌트 커스텀 속성 정의 -->

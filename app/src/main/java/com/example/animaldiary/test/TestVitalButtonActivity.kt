@@ -1,4 +1,4 @@
-package com.example.animaldiary
+package com.example.animaldiary.test
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.animaldiary.R
 
 class TestVitalButtonActivity : AppCompatActivity() {
 

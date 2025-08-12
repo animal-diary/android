@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.example.animaldiary.ui.components.SelectCardView
+            android:id="@+id/card_center_illust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:sc_align="center"
+            app:sc_showIllust="true"
+            app:sc_title="중앙-O"
+            app:sc_description="Center and O"
+            android:layout_marginBottom="20dp"/>
+
+        <com.example.animaldiary.ui.components.SelectCardView
+            android:id="@+id/card_center_no_illust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:sc_align="center"
+            app:sc_showIllust="false"
+            app:sc_title="중앙-X"
+            app:sc_description="Center and X"
+            android:layout_marginBottom="20dp"/>
+
+        <com.example.animaldiary.ui.components.SelectCardView
+            android:id="@+id/card_left_illust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:sc_align="left"
+            app:sc_showIllust="true"
+            app:sc_title="좌측-O"
+            app:sc_description="Left and O"
+            android:layout_marginBottom="20dp"/>
+
+        <com.example.animaldiary.ui.components.SelectCardView
+            android:id="@+id/card_left_no_illust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:sc_align="left"
+            app:sc_showIllust="false"
+            app:sc_title="좌측-X"
+            app:sc_description="Left and X" />
+
+    </LinearLayout>
+</ScrollView>
