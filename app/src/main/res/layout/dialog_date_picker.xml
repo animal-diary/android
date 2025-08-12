@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_date_picker_container"
+    android:padding="@dimen/padding_lg">
+
+    <!-- 달력칩 (양력/음력) -->
+    <LinearLayout
+        android:id="@+id/dp_calendar_type_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/spacing_lg">
+
+        <com.example.animaldiary.ui.components.DatePickerItemView
+            android:id="@+id/dp_solar_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_sm" />
+
+        <com.example.animaldiary.ui.components.DatePickerItemView
+            android:id="@+id/dp_lunar_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!-- 일 선택 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/spacing_lg"
+        android:baselineAligned="false">
+
+        <!-- 년 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/spacing_sm">
+
+            <ScrollView
+                android:id="@+id/dp_year_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="@dimen/spacing_lg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/spacing_sm"
+                    android:paddingBottom="@dimen/spacing_sm" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <!-- 월 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/spacing_sm">
+
+            <ScrollView
+                android:id="@+id/dp_month_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="@dimen/spacing_lg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/spacing_sm"
+                    android:paddingBottom="@dimen/spacing_sm" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <!-- 일 -->
+        <LinearLayout
+            android:id="@+id/dp_day_column"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/dp_day_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="@dimen/spacing_lg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/spacing_sm"
+                    android:paddingBottom="@dimen/spacing_sm" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 하단 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <android.widget.Button
+            android:id="@+id/dp_cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="취소"
+            android:background="@drawable/bg_button_cancel"
+            android:textColor="@color/fg_neutral_primary"
+            android:textSize="16sp"
+            android:fontFamily="@font/pretendard_medium"
+            android:layout_marginEnd="@dimen/spacing_sm" />
+
+        <android.widget.Button
+            android:id="@+id/dp_confirm_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="확인"
+            android:background="@drawable/bg_button_primary"
+            android:textColor="@color/fg_onprimary"
+            android:textSize="16sp"
+            android:fontFamily="@font/pretendard_semibold" />
+
+    </LinearLayout>
+
+</LinearLayout>

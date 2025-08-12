@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Overlay -->
+    <View
+        android:id="@+id/dp_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_date_picker_overlay"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <LinearLayout
+        android:id="@+id/dp_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@drawable/bg_date_picker_container"
+        android:padding="@dimen/padding_lg">
+
+        <!-- Calendar 칩, 양력/음력 -->
+        <LinearLayout
+            android:id="@+id/dp_calendar_type_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/spacing_sm">
+
+            <com.example.animaldiary.ui.components.DatePickerItemView
+                android:id="@+id/dp_solar_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_sm" />
+
+            <com.example.animaldiary.ui.components.DatePickerItemView
+                android:id="@+id/dp_lunar_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- 날짜 선택 영역 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/spacing_lg">
+
+            <!-- 년 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:id="@+id/dp_year_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:fadingEdge="vertical"
+                    android:fadingEdgeLength="@dimen/spacing_lg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/spacing_sm"
+                        android:paddingBottom="@dimen/spacing_sm" />
+
+                </ScrollView>
+
+            </LinearLayout>
+
+            <!-- 달 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:id="@+id/dp_month_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:fadingEdge="vertical"
+                    android:fadingEdgeLength="@dimen/spacing_lg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/spacing_sm"
+                        android:paddingBottom="@dimen/spacing_sm" />
+
+                </ScrollView>
+
+            </LinearLayout>
+
+            <!-- 일 -->
+            <LinearLayout
+                android:id="@+id/dp_day_column"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:id="@+id/dp_day_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:fadingEdge="vertical"
+                    android:fadingEdgeLength="@dimen/spacing_lg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/spacing_sm"
+                        android:paddingBottom="@dimen/spacing_sm" />
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 하단 버튼 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/dp_cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="취소"
+                android:background="@android:color/transparent"
+                android:textColor="@color/fg_neutral_tertiary"
+                android:textSize="16sp"
+                android:fontFamily="@font/pretendard_medium"
+                android:paddingHorizontal="@dimen/padding_lg"
+                android:layout_marginEnd="@dimen/spacing_sm" />
+
+            <Button
+                android:id="@+id/dp_confirm_button"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:backgroundTint="@null"
+                android:text="확인"
+                android:background="@drawable/bg_button_primary"
+                android:textColor="@color/fg_onprimary"
+                android:textSize="16sp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:paddingHorizontal="@dimen/padding_lg" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</merge>

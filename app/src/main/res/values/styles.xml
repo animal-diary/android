@@ -10,7 +10,7 @@
     <!--letterSpacing = 자간 간격 -> (em), px/font-size로 변환 함  -->
     <!-- Title -->
     <style name="Text_Title28Strong">
-        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:fontFamily">@font/pretendardsemibold</item>
         <item name="android:textSize">28sp</item>
         <item name="android:lineHeight">38sp</item>
         <!-- -0.4px / 28sp -->
@@ -18,28 +18,28 @@
     </style>
 
     <style name="Text_Title24Strong">
-        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:fontFamily">@font/pretendardsemibold</item>
         <item name="android:textSize">24sp</item>
         <item name="android:lineHeight">34sp</item>
         <item name="android:letterSpacing">-0.0125</item>
     </style>
 
     <style name="Text_Title20Strong">
-        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:fontFamily">@font/pretendardsemibold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:lineHeight">28sp</item>
         <item name="android:letterSpacing">-0.015</item>
     </style>
 
     <style name="Text_Title16Strong">
-        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:fontFamily">@font/pretendardsemibold</item>
         <item name="android:textSize">16sp</item>
         <item name="android:lineHeight">22sp</item>
         <item name="android:letterSpacing">-0.0125</item>
     </style>
 
     <style name="Text_Title14Strong">
-        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:fontFamily">@font/pretendardmedium</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineHeight">20sp</item>
         <item name="android:letterSpacing">-0.014</item>
@@ -48,28 +48,28 @@
     <!-- ======================================================================== -->
     <!-- Body -->
     <style name="Text_Body16Strong">
-        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:fontFamily">@font/pretendardmedium</item>
         <item name="android:textSize">16sp</item>
         <item name="android:lineHeight">22sp</item>
         <item name="android:letterSpacing">-0.0125</item>
     </style>
 
     <style name="Text_Body16Normal">
-        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:fontFamily">@font/pretendardregular</item>
         <item name="android:textSize">16sp</item>
         <item name="android:lineHeight">22sp</item>
         <item name="android:letterSpacing">-0.0125</item>
     </style>
 
     <style name="Text_Body14Strong">
-        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:fontFamily">@font/pretendardmedium</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineHeight">20sp</item>
         <item name="android:letterSpacing">-0.014</item>
     </style>
 
     <style name="Text_Body14Normal">
-        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:fontFamily">@font/pretendardregular</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineHeight">20sp</item>
         <item name="android:letterSpacing">-0.014</item>
@@ -78,21 +78,21 @@
     <!-- ======================================================================== -->
     <!-- Caption -->
     <style name="Text_Caption14Strong">
-        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:fontFamily">@font/pretendardsemibold</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineHeight">20sp</item>
         <item name="android:letterSpacing">-0.014</item> <!-- -0.2/14 -->
     </style>
 
     <style name="Text_Caption14Normal">
-        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:fontFamily">@font/pretendardregular</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineHeight">20sp</item>
         <item name="android:letterSpacing">-0.014</item>
     </style>
 
     <style name="Text_Caption12Normal">
-        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:fontFamily">@font/pretendardregular</item>
         <item name="android:textSize">12sp</item>
         <item name="android:lineHeight">16sp</item>
         <item name="android:letterSpacing">-0.0167</item> <!-- -0.2/12 -->
@@ -101,30 +101,48 @@
     <!-- ======================================================================== -->
     <!-- Button -->
     <style name="Text_ButtonLg">
-        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:fontFamily">@font/pretendardsemibold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:lineHeight">28sp</item>
         <item name="android:letterSpacing">-0.01</item>
     </style>
 
     <style name="Text_ButtonMd">
-        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:fontFamily">@font/pretendardsemibold</item>
         <item name="android:textSize">16sp</item>
         <item name="android:lineHeight">22sp</item>
         <item name="android:letterSpacing">-0.01875</item> <!-- -0.3/16 -->
     </style>
 
     <style name="Text_ButtonSm">
-        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:fontFamily">@font/pretendardmedium</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineHeight">20sp</item>
         <item name="android:letterSpacing">-0.014</item>
     </style>
 
     <style name="Text_Button2Xs">
-        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:fontFamily">@font/pretendardmedium</item>
         <item name="android:textSize">12sp</item>
         <item name="android:lineHeight">16sp</item>
         <item name="android:letterSpacing">-0.0167</item>
     </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
 </resources>
