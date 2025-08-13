@@ -160,4 +160,14 @@
         <attr name="fcv_showIcon" format="boolean"/>
     </declare-styleable>
 
+    <!-- EmptyState  컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="EmptyStateView">
+        <attr name="es_title" format="string"/>
+        <attr name="es_description" format="string"/>
+        <attr name="es_buttonText" format="string"/>
+
+        <attr name="es_showIllust" format="boolean"/>
+        <attr name="es_showDescription" format="boolean"/>
+        <attr name="es_showButton" format="boolean"/>
+    </declare-styleable>
 </resources>
