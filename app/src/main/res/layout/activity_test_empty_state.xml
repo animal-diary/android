@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing_lg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        <com.example.animaldiary.ui.components.EmptyStateView
+            android:id="@+id/empty_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_2xl"
+            app:es_title="Fill in the title"
+            app:es_description="This is the first line of text.\nThis is the second line."
+            app:es_buttonText="Action"
+            app:es_showIllust="true"
+            app:es_showDescription="true"
+            app:es_showButton="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Illust"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        <com.example.animaldiary.ui.components.EmptyStateView
+            android:id="@+id/empty_no_illust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_2xl"
+            app:es_title="Fill in the title"
+            app:es_description="This is the first line of text.\nThis is the second line."
+            app:es_buttonText="Action"
+            app:es_showIllust="false"
+            app:es_showDescription="true"
+            app:es_showButton="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Description"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        <com.example.animaldiary.ui.components.EmptyStateView
+            android:id="@+id/empty_no_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_2xl"
+            app:es_title="Fill in the title"
+            app:es_buttonText="Action"
+            app:es_showIllust="true"
+            app:es_showDescription="false"
+            app:es_showButton="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Button"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        <com.example.animaldiary.ui.components.EmptyStateView
+            android:id="@+id/empty_no_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_2xl"
+            app:es_title="Fill in the title"
+            app:es_description="This is the first line of text.\nThis is the second line."
+            app:es_showIllust="true"
+            app:es_showDescription="true"
+            app:es_showButton="false"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title + Description"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        <com.example.animaldiary.ui.components.EmptyStateView
+            android:id="@+id/empty_title_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_2xl"
+            app:es_title="Fill in the title"
+            app:es_description="This is the first line of text.\nThis is the second line."
+            app:es_showIllust="false"
+            app:es_showDescription="true"
+            app:es_showButton="false"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title Only"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        <com.example.animaldiary.ui.components.EmptyStateView
+            android:id="@+id/empty_title_only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_2xl"
+            app:es_title="Fill in the title"
+            app:es_showIllust="false"
+            app:es_showDescription="false"
+            app:es_showButton="false"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Illust + Title + Button"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        <com.example.animaldiary.ui.components.EmptyStateView
+            android:id="@+id/empty_illust_title_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_2xl"
+            app:es_title="Fill in the title"
+            app:es_buttonText="Action"
+            app:es_showIllust="true"
+            app:es_showDescription="false"
+            app:es_showButton="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Long Text (3 lines)"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        <com.example.animaldiary.ui.components.EmptyStateView
+            android:id="@+id/empty_long_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:es_title="Fill in the title"
+            app:es_description="This is the first line of text.\nThis is the second line.\nThis is the third line."
+            app:es_buttonText="Action"
+            app:es_showIllust="true"
+            app:es_showDescription="true"
+            app:es_showButton="true"/>
+
+    </LinearLayout>
+</ScrollView>

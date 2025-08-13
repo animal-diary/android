@@ -41,6 +41,7 @@
         <activity android:name=".TestTagActivity" />
         <activity android:name=".TestInfoMessageBoxActivity" />
         <activity android:name=".TestFilterChipActivity"/>
+        <activity android:name=".TestEmptyStateActivity"/>
 
 
 
