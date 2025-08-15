@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing_lg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Unselected -->
+        <com.example.animaldiary.ui.components.FilterChipView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fcv_text="option"
+            app:fcv_selected="false"
+            app:fcv_showIcon="false"
+            android:layout_marginBottom="@dimen/spacing_md"/>
+
+        <!-- Unselected with icon -->
+        <com.example.animaldiary.ui.components.FilterChipView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fcv_text="option"
+            app:fcv_selected="false"
+            app:fcv_showIcon="true"
+            android:layout_marginBottom="@dimen/spacing_md"/>
+
+        <!-- Selected -->
+        <com.example.animaldiary.ui.components.FilterChipView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fcv_text="option"
+            app:fcv_selected="true"
+            app:fcv_showIcon="false"
+            android:layout_marginBottom="@dimen/spacing_md"/>
+
+        <!-- Selected with icon -->
+        <com.example.animaldiary.ui.components.FilterChipView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fcv_text="option"
+            app:fcv_selected="true"
+            app:fcv_showIcon="true"
+            android:layout_marginBottom="@dimen/spacing_md"/>
+
+        <!-- Disabled -->
+        <com.example.animaldiary.ui.components.FilterChipView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fcv_text="option"
+            android:enabled="false"
+            app:fcv_selected="false"
+            app:fcv_showIcon="true"/>
+    </LinearLayout>
+</ScrollView>

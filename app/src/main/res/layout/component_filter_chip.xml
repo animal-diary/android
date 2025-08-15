@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fc_container"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:background="@drawable/bg_filter_chip"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="48dp"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/padding_sm"
+    android:paddingTop="@dimen/padding_sm"
+    android:paddingRight="@dimen/padding_sm"
+    android:paddingBottom="@dimen/padding_sm">
+
+    <TextView
+        android:id="@+id/fc_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_medium"
+        android:text="option"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/fc_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_xs"
+        android:src="@drawable/ic_plus_line"
+        android:visibility="gone" />
+</LinearLayout>

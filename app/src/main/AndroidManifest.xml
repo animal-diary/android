@@ -41,6 +41,8 @@
         <activity android:name=".TestDatePickerDialogActivity"/>
         <activity android:name=".TestTagActivity" />
         <activity android:name=".TestInfoMessageBoxActivity" />
-    </application>
+        <activity android:name=".TestFilterChipActivity"/>
+        <activity android:name=".TestEmptyStateActivity"/>
 
+    </application>
 </manifest>

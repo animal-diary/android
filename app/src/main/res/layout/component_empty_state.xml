@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/es_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_empty_state_container"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_3xl">
+
+    <View
+        android:id="@+id/es_illust"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="@dimen/spacing_lg"
+        android:background="@drawable/bg_empty_state_illust" />
+
+    <TextView
+        android:id="@+id/es_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_xs"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="Fill in the title"
+        android:textColor="@color/fg_neutral_primary"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/es_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:alpha="0.7"
+        android:fontFamily="@font/pretendard_medium"
+        android:gravity="center"
+        android:text="This is the first line of text.\nThis is the second line."
+        android:textColor="@color/fg_neutral_primary"
+        android:textSize="14sp" />
+
+    <android.widget.Button
+        android:id="@+id/es_button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:background="@drawable/bg_brand_primary_default"
+        android:fontFamily="@font/pretendardsemibold"
+        android:minWidth="140dp"
+        android:text="Action"
+        android:textColor="@color/fg_onprimary"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        app:textAllCaps="false"/>
+</LinearLayout>
