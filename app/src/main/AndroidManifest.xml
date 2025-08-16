@@ -43,6 +43,7 @@
         <activity android:name=".test.TestInfoMessageBoxActivity" />
         <activity android:name=".test.TestFilterChipActivity"/>
         <activity android:name=".test.TestEmptyStateActivity"/>
+        <activity android:name=".test.TestPrimaryIconButtonActivity"/>
 
     </application>
 </manifest>
