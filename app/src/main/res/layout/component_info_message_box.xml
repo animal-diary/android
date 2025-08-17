@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imb_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_info_message_box"
+    android:padding="@dimen/padding_lg"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/imb_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is the first line of text.\nThis is the second line."
+        android:textSize="14sp"
+        android:fontFamily="@font/pretendard_medium"
+        android:gravity="center"/>
+</LinearLayout>

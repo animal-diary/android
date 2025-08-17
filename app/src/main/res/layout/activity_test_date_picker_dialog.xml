@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_page_white"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_selected_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택된 날짜: 없음"
+            android:textSize="16sp"
+            android:textColor="@color/fg_neutral_primary"
+            android:fontFamily="@font/pretendard_medium"
+            android:layout_marginBottom="32dp"
+            android:gravity="center" />
+
+        <android.widget.Button
+            android:id="@+id/btn_show_date_picker"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:text="날짜 선택 다이얼로그 (년월일)"
+            android:background="@drawable/bg_brand_primary_default"
+            android:textColor="@color/fg_onprimary"
+            android:textSize="16sp"
+            android:fontFamily="@font/pretendard_medium"
+            android:layout_marginBottom="16dp" />
+
+        <android.widget.Button
+            android:id="@+id/btn_show_date_picker_no_day"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:text="날짜 선택 다이얼로그 (년월만)"
+            android:background="@drawable/bg_neutral_primary_default"
+            android:textColor="@color/fg_neutral_primary"
+            android:textSize="16sp"
+            android:fontFamily="@font/pretendard_medium" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

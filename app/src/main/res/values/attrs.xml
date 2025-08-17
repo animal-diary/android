@@ -264,4 +264,66 @@
         </attr>
     </declare-styleable>
 
+    <!-- DatePickerView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="DatePickerView">
+        <attr name="dp_showDay" format="boolean" />
+        <attr name="dp_isSolar" format="boolean" />
+    </declare-styleable>
+
+    <!-- DatePickerItemView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="DatePickerItemView">
+        <attr name="dpi_text" format="string" />
+        <attr name="dpi_selected" format="boolean" />
+    </declare-styleable>
+
+    <!-- TAG 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="TagView">
+        <attr name="tag_text" format="string" />
+        <attr name="tag_type" format="enum">
+            <enum name="gray" value="0" />
+            <enum name="red" value="1" />
+            <enum name="green" value="2" />
+            <enum name="blue" value="3" />
+            <enum name="yellow" value="4" />
+            <enum name="pink" value="5" />
+            <enum name="white" value="6" />
+            <enum name="orange" value="7" />
+        </attr>
+        <attr name="tag_showPlus" format="boolean" />
+    </declare-styleable>
+
+    <!-- InfoMessageBoxView  컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="InfoMessageBoxView">
+        <attr name="imb_text" format="string" />
+        <attr name="imb_align" format="enum">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+        </attr>
+        <attr name="imb_status" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="information" value="1" />
+            <enum name="success" value="2" />
+            <enum name="warning" value="3" />
+            <enum name="danger" value="4" />
+        </attr>
+        <attr name="imb_maxLines" format="integer" />
+    </declare-styleable>
+
+    <!-- FilterChip  컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="FilterChipView">
+        <attr name="fcv_text" format="string"/>
+        <attr name="fcv_selected" format="boolean"/>
+        <attr name="fcv_showIcon" format="boolean"/>
+    </declare-styleable>
+
+    <!-- EmptyState  컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="EmptyStateView">
+        <attr name="es_title" format="string"/>
+        <attr name="es_description" format="string"/>
+        <attr name="es_buttonText" format="string"/>
+
+        <attr name="es_showIllust" format="boolean"/>
+        <attr name="es_showDescription" format="boolean"/>
+        <attr name="es_showButton" format="boolean"/>
+    </declare-styleable>
 </resources>

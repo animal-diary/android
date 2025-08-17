@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/dpi_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacing_sm"
+        android:paddingEnd="@dimen/spacing_sm"
+        android:paddingTop="@dimen/spacing_sm"
+        android:paddingBottom="@dimen/spacing_sm"
+        android:background="@drawable/bg_date_picker_item_unselected"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/dpi_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2025년"
+            style="@style/Text_Title24Strong"
+            android:textColor="@color/fg_neutral_primary"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</merge>

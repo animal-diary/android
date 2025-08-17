@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing_lg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:dividerPadding="@dimen/spacing_md">
+
+        <!-- Status : nomal, 정렬: center -->
+        <com.example.animaldiary.ui.components.InfoMessageBoxView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:imb_align="center"
+            app:imb_status="normal"
+            app:imb_text="This is the first line of text.\nThis is the second line."/>
+
+        <!-- Status : information, 정렬: left, 3 lines -->
+        <com.example.animaldiary.ui.components.InfoMessageBoxView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:imb_align="left"
+            app:imb_status="information"
+            app:imb_text="This is the first line of text.\nThis is the second line.\nThis is the third line."/>
+
+        <!-- Status : Success, 정렬 : center -->
+        <com.example.animaldiary.ui.components.InfoMessageBoxView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:imb_align="center"
+            app:imb_status="success"
+            app:imb_text="This is the first line of text.\nThis is the second line."/>
+        <!-- Status : warning, 정렬 : center -->
+        <com.example.animaldiary.ui.components.InfoMessageBoxView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:imb_align="center"
+            app:imb_status="warning"
+            app:imb_text="This is the first line of text.\nThis is the second line."/>
+
+        <!-- Status : center, 정렬 : center -->
+        <com.example.animaldiary.ui.components.InfoMessageBoxView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:imb_align="center"
+            app:imb_status="danger"
+            app:imb_text="This is the first line of text.\nThis is the second line."/>
+    </LinearLayout>
+</ScrollView>

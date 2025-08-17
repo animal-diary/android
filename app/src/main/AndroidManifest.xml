@@ -31,6 +31,12 @@
         <activity android:name=".test.TestSelectCardActivity" />
         <activity android:name=".test.TestModalActivity"/>
         <activity android:name=".test.TestActionButtonActivity" />
-    </application>
 
+        <activity android:name=".TestDatePickerDialogActivity"/>
+        <activity android:name=".TestTagActivity" />
+        <activity android:name=".TestInfoMessageBoxActivity" />
+        <activity android:name=".TestFilterChipActivity"/>
+        <activity android:name=".TestEmptyStateActivity"/>
+
+    </application>
 </manifest>
