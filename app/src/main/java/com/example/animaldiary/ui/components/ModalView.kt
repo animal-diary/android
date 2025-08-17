@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import com.example.animaldiary.R
 
 class ModalView @JvmOverloads constructor(
@@ -22,7 +23,9 @@ class ModalView @JvmOverloads constructor(
     private val tvContent: TextView
     private val contentContainer: LinearLayout
     private val modalScrollView: ScrollView
-    private val buttonContainer: ButtonContainerView
+    private val modalButtonContainer: LinearLayout
+    private val primaryButton: ActionButtonView
+    private val secondaryButton: ActionButtonView
 
     private var align: Int = 0 // 0: center, 1: left
 
@@ -37,7 +40,9 @@ class ModalView @JvmOverloads constructor(
         tvContent = findViewById(R.id.modal_content)
         contentContainer = findViewById(R.id.modal_content_container)
         modalScrollView = findViewById(R.id.modal_scrollview)
-        buttonContainer = findViewById(R.id.modal_button_container)
+        modalButtonContainer = findViewById(R.id.modal_button_container)
+        primaryButton = findViewById(R.id.modal_primary_button)
+        secondaryButton = findViewById(R.id.modal_secondary_button)
 
         // XML 속성 처리
         attrs?.let {
@@ -61,7 +66,7 @@ class ModalView @JvmOverloads constructor(
                 val showLeftButton = a.getBoolean(R.styleable.ModalView_showLeftButton, true)
                 val showRightButton = a.getBoolean(R.styleable.ModalView_showRightButton, true)
 
-                // ButtonContainerView의 Public 메서드를 사용하여 설정
+                // 버튼에 직접 속성 설정
                 setLeftButtonText(leftButtonText)
                 setRightButtonText(rightButtonText)
                 showLeftButton(showLeftButton)
@@ -76,17 +81,17 @@ class ModalView @JvmOverloads constructor(
     // public 메서드
     fun setTitle(title: String?) {
         tvTitle.text = title
-        tvTitle.visibility = if (title.isNullOrBlank()) View.GONE else View.VISIBLE
+        tvTitle.isVisible = !title.isNullOrBlank()
     }
 
     fun setDescription(description: String?) {
         tvDescription.text = description
-        tvDescription.visibility = if (description.isNullOrBlank()) View.GONE else View.VISIBLE
+        tvDescription.isVisible = !description.isNullOrBlank()
     }
 
     fun setContentText(content: String?) {
         tvContent.text = content
-        tvContent.visibility = if (content.isNullOrBlank()) View.GONE else View.VISIBLE
+        tvContent.isVisible = !content.isNullOrBlank()
         updateAlignment() // 텍스트 변경 후 정렬 재적용
     }
 
@@ -103,31 +108,31 @@ class ModalView @JvmOverloads constructor(
     }
 
     fun showTitle(show: Boolean) {
-        tvTitle.visibility = if (show) View.VISIBLE else View.GONE
+        tvTitle.isVisible = show
     }
 
     fun showDescription(show: Boolean) {
-        tvDescription.visibility = if (show) View.VISIBLE else View.GONE
+        tvDescription.isVisible = show
     }
 
     fun showContent(show: Boolean) {
-        modalScrollView.visibility = if (show) View.VISIBLE else View.GONE
+        modalScrollView.isVisible = show
     }
 
     fun setLeftButtonText(text: String?) {
-        buttonContainer.setSecondaryText(text)
+        secondaryButton.ab_text = text
     }
 
     fun setRightButtonText(text: String?) {
-        buttonContainer.setPrimaryText(text)
+        primaryButton.ab_text = text
     }
 
     fun showLeftButton(show: Boolean) {
-        buttonContainer.showSecondaryButton(show)
+        secondaryButton.isVisible = show
     }
 
     fun showRightButton(show: Boolean) {
-        buttonContainer.showPrimaryButton(show)
+        primaryButton.isVisible = show
     }
 
     fun getContentContainer(): LinearLayout {
@@ -135,10 +140,10 @@ class ModalView @JvmOverloads constructor(
     }
 
     fun setOnLeftButtonClickListener(listener: (View) -> Unit) {
-        buttonContainer.setOnSecondaryButtonClickListener(listener)
+        secondaryButton.setOnClickListener(listener)
     }
 
     fun setOnRightButtonClickListener(listener: (View) -> Unit) {
-        buttonContainer.setOnPrimaryButtonClickListener(listener)
+        primaryButton.setOnClickListener(listener)
     }
 }

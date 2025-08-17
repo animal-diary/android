@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/modal_root"
@@ -43,8 +44,7 @@
             android:layout_width="280dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_marginTop="@dimen/spacing_md"
-            android:layout_marginBottom="@dimen/spacing_md">
+            android:layout_marginTop="@dimen/spacing_md">
 
             <LinearLayout
                 android:id="@+id/modal_content_container"
@@ -65,21 +65,54 @@
             </LinearLayout>
         </ScrollView>
 
-        <com.example.animaldiary.ui.components.ButtonContainerView
-            android:id="@+id/modal_button_container"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/modal_button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/spacing_md">
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/modal_secondary_button"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:bc_alignment="horizontal"
-            app:bc_showAdditionalButton="true"
-            app:bc_primaryText="Action"
-            app:bc_primaryHierarchy="primary"
-            app:bc_primaryType="filled"
-            app:bc_primarySize="md"
-            app:bc_secondaryText="Action"
-            app:bc_secondaryHierarchy="secondary"
-            app:bc_secondaryType="filled"
-            app:bc_secondarySize="md" />
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            app:ab_text="Action"
+            app:ab_hierarchy="secondary"
+            app:ab_type="filled"
+            app:ab_state="normal"
+            app:ab_size="md" />
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/modal_primary_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:ab_text="Action"
+            app:ab_hierarchy="primary"
+            app:ab_type="filled"
+            app:ab_state="normal"
+            app:ab_size="md" />
+    </LinearLayout>
+
+<!--        <com.example.animaldiary.ui.components.ButtonContainerView-->
+<!--            android:id="@+id/modal_button_container"-->
+<!--            xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:bc_alignment="horizontal"-->
+<!--            app:bc_showAdditionalButton="true"-->
+<!--            app:bc_primaryText="Action"-->
+<!--            app:bc_primaryHierarchy="primary"-->
+<!--            app:bc_primaryType="filled"-->
+<!--            app:bc_primarySize="md"-->
+<!--            app:bc_secondaryText="Action"-->
+<!--            app:bc_secondaryHierarchy="secondary"-->
+<!--            app:bc_secondaryType="filled"-->
+<!--            app:bc_secondarySize="md" />-->
+
     </LinearLayout>
 </merge>
