@@ -32,11 +32,11 @@
         <activity android:name=".test.TestModalActivity"/>
         <activity android:name=".test.TestActionButtonActivity" />
 
-        <activity android:name=".TestDatePickerDialogActivity"/>
-        <activity android:name=".TestTagActivity" />
-        <activity android:name=".TestInfoMessageBoxActivity" />
-        <activity android:name=".TestFilterChipActivity"/>
-        <activity android:name=".TestEmptyStateActivity"/>
+        <activity android:name=".test.TestDatePickerDialogActivity"/>
+        <activity android:name=".test.TestTagActivity" />
+        <activity android:name=".test.TestInfoMessageBoxActivity" />
+        <activity android:name=".test.TestFilterChipActivity"/>
+        <activity android:name=".test.TestEmptyStateActivity"/>
 
     </application>
 </manifest>

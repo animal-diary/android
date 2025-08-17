@@ -1,10 +1,11 @@
-package com.example.animaldiary
+package com.example.animaldiary.test
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.animaldiary.R
 import com.example.animaldiary.ui.components.DatePickerDialog
 import java.util.*
 
