@@ -120,12 +120,25 @@
     <attr name="showIcon" format="boolean" />
     <attr name="illustDrawable" format="reference" />
 
-  <!-- 미리 정의된 아바타 크기들 -->
+    <!-- 미리 정의된 아바타 크기들 -->
     <dimen name="avatar_size_small">32dp</dimen>
     <dimen name="avatar_size_medium">48dp</dimen>
     <dimen name="avatar_size_large">64dp</dimen>
     <dimen name="avatar_size_extra_large">80dp</dimen>
     <dimen name="avatar_size_xxl">96dp</dimen>
+
+
+    <!-- BottomSheetView 컴포넌트 커스텀 속성 정의 -->
+    <declare-styleable name="BottomSheetView">
+        <attr name="bs_title" format="string" />
+        <attr name="bs_showTitle" format="boolean" />
+        <attr name="bs_showHandle" format="boolean" />
+        <attr name="bs_showNavigation" format="boolean" />
+        <attr name="bs_showDivider" format="boolean" />
+        <attr name="bs_leftIcon" format="reference" />
+        <attr name="bs_rightIcon1" format="reference" />
+        <attr name="bs_rightIcon2" format="reference" />
+    </declare-styleable>
 
     <!-- Carousel Item 컴포넌트 커스텀 속성 정의 -->
     <declare-styleable name="CarouselItemView">
