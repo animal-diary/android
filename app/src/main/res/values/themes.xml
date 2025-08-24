@@ -5,5 +5,21 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="CalendarDayOfWeek" parent="Text_Body14Strong">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/fg_neutral_primary</item>
+    </style>
+
+    <style name="CalendarDate" parent="Text_Body16Strong">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/fg_neutral_primary</item>
+    </style>
+
     <style name="Theme.AnimalDiary" parent="Base.Theme.AnimalDiary" />
 </resources>
