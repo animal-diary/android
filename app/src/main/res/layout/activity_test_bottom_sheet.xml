@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_xl"
+    android:background="@color/bg_page_white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="바텀시트 테스트"
+        style="@style/Text_Title24Strong"
+        android:textColor="@color/fg_neutral_primary"
+        android:layout_marginBottom="@dimen/spacing_2xl"/>
+
+    <com.example.animaldiary.ui.components.ActionButtonView
+        android:id="@+id/btn_basic_bottom_sheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ab_text="기본 바텀시트"
+        app:ab_hierarchy="primary"
+        app:ab_type="filled"
+        app:ab_state="normal"
+        app:ab_size="md"
+        android:layout_marginBottom="8dp"/>
+
+    <com.example.animaldiary.ui.components.ActionButtonView
+        android:id="@+id/btn_no_navigation_bottom_sheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ab_text="네비게이션 없는 바텀시트"
+        app:ab_hierarchy="primary"
+        app:ab_type="filled"
+        app:ab_state="normal"
+        app:ab_size="md"
+        android:layout_marginBottom="8dp"/>
+
+
+</LinearLayout>

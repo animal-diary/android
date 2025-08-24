@@ -12,15 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnimalDiary"
         tools:targetApi="31">
-<!--        <activity-->
-<!--            android:name=".MainActivity"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -30,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".test.TestTextButtonActivity" />
         <activity android:name=".test.TestVitalButtonActivity" />
         <activity android:name=".test.TestTextAreaActivity" />
@@ -37,13 +29,16 @@
         <activity android:name=".test.TestTopNavigationActivity" />
         <activity android:name=".test.TestSelectFieldActivity" />
         <activity android:name=".test.TestSelectCardActivity" />
-      
+        <activity android:name=".test.TestPrimaryIconButtonActivity"/>
+        <activity android:name=".test.TestModalActivity"/>
+        <activity android:name=".test.TestActionButtonActivity" />
         <activity android:name=".test.TestDatePickerDialogActivity"/>
         <activity android:name=".test.TestTagActivity" />
         <activity android:name=".test.TestInfoMessageBoxActivity" />
-        <activity android:name=".test.TestFilterChipActivity"/>
+        <activity android:name=".test.TestFilterChipActivity" />
         <activity android:name=".test.TestEmptyStateActivity"/>
-        <activity android:name=".test.TestPrimaryIconButtonActivity"/>
+        <activity android:name=".test.tabs.TestTabsActivity" />
+        <activity android:name=".test.TestBottomSheetActivity" />
 
     </application>
 </manifest>
