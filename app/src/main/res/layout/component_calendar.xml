@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_lg"
+    android:background="@drawable/bg_calendar_container">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+    
+    <ImageView
+        android:id="@+id/iv_previous_month"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:layout_marginStart="6dp"
+        android:src="@drawable/ic_chevron_left"/>
+
+    <TextView
+        android:id="@+id/tv_month_year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="2025년 7월"
+        android:gravity="center"
+        style="@style/Text_Title20Strong"
+        android:textColor="@color/fg_neutral_primary" />
+
+    <ImageView
+        android:id="@+id/iv_next_month"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:layout_marginEnd="6dp"
+        android:src="@drawable/ic_chevron_right"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/spacing_sm">
+
+        <TextView
+            style="@style/CalendarDayOfWeek"
+            android:text="일" />
+
+        <TextView
+            style="@style/CalendarDayOfWeek"
+            android:text="월" />
+
+        <TextView
+            style="@style/CalendarDayOfWeek"
+            android:text="화" />
+
+        <TextView
+            style="@style/CalendarDayOfWeek"
+            android:text="수" />
+
+        <TextView
+            style="@style/CalendarDayOfWeek"
+            android:text="목" />
+
+        <TextView
+            style="@style/CalendarDayOfWeek"
+            android:text="금" />
+
+        <TextView
+            style="@style/CalendarDayOfWeek"
+            android:text="토" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_calendar_dates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:overScrollMode="never"
+        android:nestedScrollingEnabled="false" />
+
+</LinearLayout>
