@@ -29,6 +29,7 @@
         <activity android:name=".test.TestTopNavigationActivity" />
         <activity android:name=".test.TestSelectFieldActivity" />
         <activity android:name=".test.TestSelectCardActivity" />
+        <activity android:name=".test.TestPrimaryIconButtonActivity"/>
         <activity android:name=".test.TestModalActivity"/>
         <activity android:name=".test.TestActionButtonActivity" />
         <activity android:name=".test.TestDatePickerDialogActivity"/>
