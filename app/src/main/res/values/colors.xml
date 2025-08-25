@@ -153,6 +153,7 @@
     <color name="surface_overlay">@color/color_neutral_transparent_40</color>
     <color name="surface_smoke_top">@color/color_neutral_transparent_30</color>
     <color name="surface_smoke_bottom">@color/color_common_black_transparent_60</color>
+    <color name="surface_smoke_default">@color/color_neutral_transparent_60</color>
 
     <color name="surface_onoverlay_default">@color/color_common_0</color>
     <color name="surface_onoverlay_pressed">@color/color_neutral_100</color>
