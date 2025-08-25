@@ -38,6 +38,7 @@
         <activity android:name=".test.TestEmptyStateActivity"/>
         <activity android:name=".test.tabs.TestTabsActivity" />
         <activity android:name=".test.TestBottomSheetActivity" />
+        <activity android:name=".ui.toast.TestToastActivity"/>
 
     </application>
 </manifest>
