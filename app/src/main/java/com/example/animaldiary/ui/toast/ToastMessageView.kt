@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import com.example.animaldiary.R
 
 enum class ToastStyle { NORMAL, INFORMATION, SUCCESS, WARNING, DANGER }
@@ -34,11 +35,10 @@ class ToastMessageView(
         }
         root.background = bg
 
-        // 좌우 마진
-        layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT).apply {
-            setMargins(parentWidthMargin, 0, parentWidthMargin, 0)
-        }
-        elevation = dp(2f)
+        // 접근성- 토스트 내용 읽어주기
+        ViewCompat.setAccessibilityLiveRegion(text, ViewCompat.ACCESSIBILITY_LIVE_REGION_POLITE)
+
+        // 진입/퇴장 애니메이션 초기 상태
         alpha = 0f
         translationY = dp(12f)
         elevation = dp(2f)
@@ -83,11 +83,21 @@ class ToastMessageView(
     }
 
     private fun dp(v: Float) = (v * resources.displayMetrics.density)
+
+    // 등장 애니메이션, 접근성
     fun appear() {
+        animate().cancel()
+        if (isAttachedToWindow) {
+            announceForAccessibility(text.text)
+        } else {
+            post { announceForAccessibility(text.text) }
+        }
         animate().alpha(1f).translationY(0f).setDuration(180).start()
     }
 
+    // 퇴장 애니매이션
     fun disappear(onEnd: () -> Unit) {
+        animate().cancel()
         animate().alpha(0f).translationY(-dp(8f)).setDuration(150).withEndAction(onEnd).start()
     }
 }
