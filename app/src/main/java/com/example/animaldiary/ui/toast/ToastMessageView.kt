@@ -2,21 +2,19 @@ package com.example.animaldiary.ui.toast
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import com.example.animaldiary.R
 
 enum class ToastStyle { NORMAL, INFORMATION, SUCCESS, WARNING, DANGER }
 
 class ToastMessageView(
-    context: Context,
-    parentWidthMargin: Int  // 좌우 여백
+    context: Context
 ) : LinearLayout(context) {
 
     private val root: LinearLayout
@@ -37,35 +35,38 @@ class ToastMessageView(
         }
         root.background = bg
 
-        // 좌우 마진
-        layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT).apply {
-            setMargins(parentWidthMargin, 0, parentWidthMargin, 0)
-        }
-        elevation = dp(2f)
+        // 접근성- 토스트 내용 읽어주기
+        ViewCompat.setAccessibilityLiveRegion(text, ViewCompat.ACCESSIBILITY_LIVE_REGION_POLITE)
+
+        // 진입/퇴장 애니메이션 초기 상태
         alpha = 0f
         translationY = dp(12f)
+        elevation = dp(2f)
+        orientation = HORIZONTAL
     }
 
+    // 내용 및 상태 바인딩
     fun bind(message: String, style: ToastStyle) {
         text.text = message
 
         if (style == ToastStyle.NORMAL) {
             // NORMAL: 아이콘x
-            badge.visibility = View.GONE
             badge.setImageDrawable(null)
             badge.background = null
-        } else {
-            badge.visibility = View.VISIBLE
-            badge.background = null
-            // 아이콘 리소스
-            val iconRes = badgeIconRes(style)
-            badge.setImageResource(iconRes)
-            val tintColor = ContextCompat.getColor(context, iconColorRes(style))
-            badge.imageTintList = ColorStateList.valueOf(tintColor)
+            badge.visibility = GONE
+            return
         }
+        badge.visibility = VISIBLE
+        badge.background = null
+
+        // 아이콘 리소스
+        badge.setImageResource(badgeIconRes(style))
+        badge.imageTintList = ColorStateList.valueOf(
+            ContextCompat.getColor(context, iconTintColorRes(style))
+        )
     }
 
-    private fun iconColorRes(style: ToastStyle): Int = when (style) {
+    private fun iconTintColorRes(style: ToastStyle): Int = when (style) {
         ToastStyle.INFORMATION -> R.color.bg_information_strong
         ToastStyle.SUCCESS -> R.color.bg_success_strong
         ToastStyle.WARNING -> R.color.bg_warning_strong
@@ -82,11 +83,21 @@ class ToastMessageView(
     }
 
     private fun dp(v: Float) = (v * resources.displayMetrics.density)
+
+    // 등장 애니메이션, 접근성
     fun appear() {
+        animate().cancel()
+        if (isAttachedToWindow) {
+            announceForAccessibility(text.text)
+        } else {
+            post { announceForAccessibility(text.text) }
+        }
         animate().alpha(1f).translationY(0f).setDuration(180).start()
     }
 
+    // 퇴장 애니매이션
     fun disappear(onEnd: () -> Unit) {
+        animate().cancel()
         animate().alpha(0f).translationY(-dp(8f)).setDuration(150).withEndAction(onEnd).start()
     }
 }
