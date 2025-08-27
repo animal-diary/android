@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigation_activity"
+        android:id="@+id/navigation_health_note"
         android:icon="@drawable/ic_activity_line"
         android:title="건강노트" />
 
     <item
-        android:id="@+id/navigation_edit"
+        android:id="@+id/navigation_manage"
         android:icon="@drawable/ic_edit_line"
         android:title="관리하기" />
 
     <item
-        android:id="@+id/navigation_settings"
+        android:id="@+id/navigation_setting"
         android:icon="@drawable/ic_settings_line"
         android:title="설정" />
 </menu>
