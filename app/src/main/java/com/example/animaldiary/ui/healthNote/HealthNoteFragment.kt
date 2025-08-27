@@ -12,5 +12,5 @@ class HealthNoteFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = inflater.inflate(R.layout.fragment_setting, container, false)
+    ): View = inflater.inflate(R.layout.fragment_health_note, container, false)
 }
