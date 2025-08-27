@@ -35,8 +35,6 @@ class TestCalendarActivity : AppCompatActivity(), CalendarAdapter.OnItemClickLis
     }
 
     private fun setupCalendar() {
-
-
         calendarView.layoutManager = GridLayoutManager(this, 7)
         updateCalendar()
 
@@ -51,7 +49,7 @@ class TestCalendarActivity : AppCompatActivity(), CalendarAdapter.OnItemClickLis
     }
 
     private fun updateCalendar() {
-        val daysList = generateCalendarDays(calendar)
+        val daysList = generateCalendarDays(calendar, 6)
         calendarAdapter = CalendarAdapter(daysList, this)
         calendarView.adapter = calendarAdapter
 
@@ -61,15 +59,16 @@ class TestCalendarActivity : AppCompatActivity(), CalendarAdapter.OnItemClickLis
         monthYearTextView.text = "${year}년 ${month}월"
     }
 
-    // 캘린더에 표시될 날짜 목록을 생성 - 항상 42개(6주 * 7일)의 날짜
-    private fun generateCalendarDays(cal: Calendar): List<CalendarDay> {
+    // 캘린더에 표시될 날짜 목록을 생성
+    private fun generateCalendarDays(cal: Calendar, numberOfWeeks: Int): List<CalendarDay> {
         val daysList = mutableListOf<CalendarDay>()
         val today = Calendar.getInstance()
         val currentMonth = cal.clone() as Calendar
 
         currentMonth.set(Calendar.DAY_OF_MONTH, 1)
-        val firstDayOfWeek = currentMonth.get(Calendar.DAY_OF_WEEK) - 1
+        val firstDayOfWeek = currentMonth.get(Calendar.DAY_OF_WEEK) - 1 // 일요일 = 0
 
+        // 이전 달 날짜 추가
         val prevMonth = cal.clone() as Calendar
         prevMonth.add(Calendar.MONTH, -1)
         val prevMonthDays = prevMonth.getActualMaximum(Calendar.DAY_OF_MONTH)
@@ -77,6 +76,7 @@ class TestCalendarActivity : AppCompatActivity(), CalendarAdapter.OnItemClickLis
             daysList.add(CalendarDay(prevMonthDays - i, isCurrentMonth = false))
         }
 
+        // 현재 달 날짜 추가
         val daysInMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH)
         for (i in 1..daysInMonth) {
             val isToday = today.get(Calendar.DAY_OF_MONTH) == i &&
@@ -85,11 +85,16 @@ class TestCalendarActivity : AppCompatActivity(), CalendarAdapter.OnItemClickLis
             daysList.add(CalendarDay(i, isCurrentMonth = true, isToday = isToday))
         }
 
-        val totalDays = daysList.size
-        val nextMonthDays = 42 - totalDays
+        // 다음 달 날짜 추가
+        val totalCalendarDays = numberOfWeeks * 7
+        while (daysList.size > totalCalendarDays) {
+            daysList.removeAt(daysList.lastIndex)
+        }
+        val nextMonthDays = totalCalendarDays - daysList.size
         for (i in 1..nextMonthDays) {
             daysList.add(CalendarDay(i, isCurrentMonth = false))
         }
+
         return daysList
     }
 

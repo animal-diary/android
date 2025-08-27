@@ -45,8 +45,8 @@ class CalendarAdapter(val days: List<CalendarDay>, private val itemClickListener
 
             // 선택 여부에 따라 배경과 텍스트 색상을 변경
             if (isSelected) {
-                dayTextView.setBackgroundResource(R.drawable.bg_calendar_danger_default) // 선택된 날짜 배경
-                dayTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.fg_inverse)) // 선택된 날짜 텍스트 색상
+                dayTextView.setBackgroundResource(R.drawable.bg_calendar_none_pressed) // 선택된 날짜 배경
+//                dayTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.fg_inverse)) // 선택된 날짜 텍스트 색상
             } else {
                 dayTextView.background = null // 배경 제거
 //                dayTextView.setTextColor(
