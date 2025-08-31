@@ -21,6 +21,8 @@
             app:sf_description="description"
             app:sf_placeholder="Choose an option"
             app:sf_icon="@drawable/ic_chevron_right"
+            app:sf_showTitle="true"
+            app:sf_showDescription="true"
             app:sf_required="true"
             app:sf_state="normal"
             android:layout_marginBottom="16dp" />

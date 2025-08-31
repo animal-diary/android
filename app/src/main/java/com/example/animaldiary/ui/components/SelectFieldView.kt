@@ -39,39 +39,26 @@ class SelectFieldView @JvmOverloads constructor(
         attrs?.let {
             val typedArray = context.obtainStyledAttributes(it, R.styleable.SelectFieldView)
             try {
-                // Title
+                // 속성 읽기
                 val title = typedArray.getString(R.styleable.SelectFieldView_sf_title)
-                titleText.text = title ?: ""
-                titleText.isVisible = !title.isNullOrBlank()
-
-                // Required
                 val isRequired = typedArray.getBoolean(R.styleable.SelectFieldView_sf_required, false)
-                requiredMark.visibility = if (isRequired) View.VISIBLE else View.GONE
-
-                // Description
                 val description = typedArray.getString(R.styleable.SelectFieldView_sf_description)
-                descriptionText.text = description ?: ""
-                descriptionText.isVisible = !description.isNullOrBlank()
-
-                // Placeholder
                 val placeholder = typedArray.getString(R.styleable.SelectFieldView_sf_placeholder)
-                valueText.hint = placeholder ?: ""
-
-                // Icon
                 val iconResId = typedArray.getResourceId(R.styleable.SelectFieldView_sf_icon, 0)
-                if (iconResId != 0) {
-                    icon.setImageResource(iconResId)
-                    icon.visibility = View.VISIBLE
-                } else {
-                    icon.visibility = View.GONE
-                }
-
-                // Error Text
                 val error = typedArray.getString(R.styleable.SelectFieldView_sf_errorText)
-                errorText.text = error ?: ""
-                errorText.isVisible = !error.isNullOrBlank()
+                val showTitleAttr = typedArray.getBoolean(R.styleable.SelectFieldView_sf_showTitle, true)
+                val showDescriptionAttr = typedArray.getBoolean(R.styleable.SelectFieldView_sf_showDescription, true)
 
-                // State
+                // 속성을 기반으로 초기 상태 적용
+                setTitle(title, showTitleAttr)
+                setDescription(description, showDescriptionAttr)
+                showRequiredMark(isRequired)
+                setPlaceholder(placeholder)
+                if (iconResId != 0) {
+                    setIcon(iconResId)
+                }
+                setErrorText(error)
+
                 when (typedArray.getInt(R.styleable.SelectFieldView_sf_state, 0)) {
                     0 -> setNormalState()
                     1 -> setFocusedState()
@@ -85,7 +72,52 @@ class SelectFieldView @JvmOverloads constructor(
         }
     }
 
-    // States
+    // 동적 제어를 위한 공개 함수들
+    fun setTitle(title: String?, show: Boolean = true) {
+        titleText.text = title
+        titleText.isVisible = show
+    }
+
+    fun setDescription(description: String?, show: Boolean = true) {
+        descriptionText.text = description
+        descriptionText.isVisible = show
+    }
+
+    fun showRequiredMark(show: Boolean) {
+        requiredMark.isVisible = show
+    }
+
+    fun setPlaceholder(placeholder: String?) {
+        valueText.hint = placeholder
+    }
+
+    fun setIcon(iconResId: Int) {
+        icon.setImageResource(iconResId)
+        icon.isVisible = true
+    }
+
+    fun showIcon(show: Boolean) {
+        icon.isVisible = show
+    }
+
+    fun setErrorText(error: String?) {
+        errorText.text = error
+        errorText.isVisible = !error.isNullOrBlank()
+    }
+
+    fun setValue(value: String) {
+        valueText.text = value
+    }
+
+    fun getValue(): String {
+        return valueText.text.toString()
+    }
+
+    fun setOnClickListenerForInput(listener: () -> Unit) {
+        inputContainer.setOnClickListener { listener() }
+    }
+
+    // 상태
     fun setNormalState() {
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_default)
         errorText.visibility = View.GONE
@@ -107,18 +139,5 @@ class SelectFieldView @JvmOverloads constructor(
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_disabled)
         valueText.isEnabled = false
         icon.isEnabled = false
-    }
-
-    fun setValue(value: String) {
-        valueText.text = value
-    }
-
-    fun getValue(): String {
-        return valueText.text.toString()
-    }
-
-    fun setOnClickListenerForInput(listener: () -> Unit) {
-        valueText.setOnClickListener { listener() }
-        icon.setOnClickListener { listener() }
     }
 }
