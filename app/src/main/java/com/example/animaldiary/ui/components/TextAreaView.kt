@@ -27,12 +27,15 @@ class TextAreaView @JvmOverloads constructor(
 
     private var maxLength: Int = 200
     private var showCount: Boolean = false
+    private var showTitle: Boolean = true
+    private var showDescription: Boolean = true
+    private var isRequired: Boolean = false
 
     init {
         LayoutInflater.from(context).inflate(R.layout.component_text_area, this, true)
         orientation = VERTICAL
 
-        // find views
+        // 뷰 찾기
         titleContainer = findViewById(R.id.ta_titleContainer)
         tvTitle = findViewById(R.id.ta_title)
         tvRequired = findViewById(R.id.ta_requiredMark)
@@ -44,16 +47,22 @@ class TextAreaView @JvmOverloads constructor(
         attrs?.let {
             val ta = context.obtainStyledAttributes(it, R.styleable.TextAreaView, 0, 0)
             try {
+                // 속성 읽기 및 적용
                 ta.getString(R.styleable.TextAreaView_ta_title)?.let { setTitle(it) }
-                showRequired(ta.getBoolean(R.styleable.TextAreaView_ta_required, false))
+                isRequired = ta.getBoolean(R.styleable.TextAreaView_ta_required, false)
                 ta.getString(R.styleable.TextAreaView_ta_description)?.let { setDescription(it) }
-                showCount(ta.getBoolean(R.styleable.TextAreaView_ta_showCount, false))
-                setMaxLength(ta.getInt(R.styleable.TextAreaView_ta_maxLength, 200))
+                showCount = ta.getBoolean(R.styleable.TextAreaView_ta_showCount, false)
+                maxLength = ta.getInt(R.styleable.TextAreaView_ta_maxLength, 200)
+                showTitle = ta.getBoolean(R.styleable.TextAreaView_ta_showTitle, true)
+                showDescription = ta.getBoolean(R.styleable.TextAreaView_ta_showDescription, true)
+
+                // 속성값에 따라 초기 상태 설정
                 when (ta.getInt(R.styleable.TextAreaView_ta_state, 0)) {
                     0 -> setDefaultState()
                     1 -> setFocusedState()
                     2 -> setDisabledState()
                 }
+
             } finally {
                 ta.recycle()
             }
@@ -80,17 +89,21 @@ class TextAreaView @JvmOverloads constructor(
             override fun onTextChanged(s: CharSequence?, st: Int, b: Int, c: Int) = Unit
         })
 
-        // 초기 visibility & state
-        if (titleContainer.visibility != View.VISIBLE) titleContainer.visibility = View.GONE
-        if (tvRequired.visibility != View.VISIBLE) tvRequired.visibility = View.GONE
-        if (tvDesc.visibility != View.VISIBLE) tvDesc.visibility = View.GONE
-        if (tvCount.visibility != View.VISIBLE) tvCount.visibility = View.GONE
+        // 초기 가시성 설정
+        titleContainer.visibility = if (showTitle) View.VISIBLE else View.GONE
+        tvRequired.visibility = if (isRequired) View.VISIBLE else View.GONE
+        tvDesc.visibility = if (showDescription) View.VISIBLE else View.GONE
+        tvCount.visibility = if (showCount) View.VISIBLE else View.GONE
         setDefaultState()
     }
 
     fun setTitle(text: String) {
         tvTitle.text = text
         titleContainer.visibility = View.VISIBLE
+    }
+
+    fun showTitle(show: Boolean) {
+        titleContainer.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     fun showRequired(show: Boolean) {
@@ -100,6 +113,10 @@ class TextAreaView @JvmOverloads constructor(
     fun setDescription(desc: String) {
         tvDesc.text = desc
         tvDesc.visibility = View.VISIBLE
+    }
+
+    fun showDescription(show: Boolean) {
+        tvDesc.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     fun showCount(show: Boolean) {

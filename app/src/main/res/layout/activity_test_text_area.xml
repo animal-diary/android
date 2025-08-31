@@ -15,10 +15,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:ta_title="내용을 입력해주세요"
-            app:ta_required="true"
+            app:ta_required="false"
             app:ta_description="200자 이내로 작성해 주세요"
             app:ta_showCount="true"
             app:ta_maxLength="200"
+            app:ta_showTitle="false"
             app:ta_state="normal"/>
 
         <Button

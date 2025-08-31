@@ -265,6 +265,8 @@
             <enum name="focused" value="1" />
             <enum name="disabled" value="2" />
         </attr>
+        <attr name="ta_showTitle" format="boolean" />
+        <attr name="ta_showDescription" format="boolean" />
     </declare-styleable>
 
     <!-- TextButtonView 컴포넌트 커스텀 속성 정의 -->
