@@ -14,10 +14,13 @@
         app:ti_title="이메일"
         app:ti_description="가입에 사용될 이메일을 입력하세요"
         app:ti_placeholder="example@email.com"
+        app:ti_showTitle="true"
+        app:ti_showDescription="true"
         app:ti_required="true"
         app:ti_icon="@drawable/ic_chevron_down"
         app:ti_errorText="이메일 형식이 아닙니다"
-        app:ti_state="normal" />
+        app:ti_state="normal"
+        />
 
     <Button
         android:id="@+id/btnValidate"
