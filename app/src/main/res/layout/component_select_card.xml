@@ -79,11 +79,11 @@
     <!-- Left with Illust -->
     <LinearLayout
         android:id="@+id/left_layout_illust"
-        android:layout_width="188dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="start|center_vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         android:background="@drawable/bg_select_card_default"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"

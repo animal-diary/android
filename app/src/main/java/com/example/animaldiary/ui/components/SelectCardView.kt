@@ -92,6 +92,16 @@ class SelectCardView @JvmOverloads constructor(
         }
     }
 
+    fun setScTitle(title: String) {
+        this.cardTitle = title
+        applyLayout()
+    }
+
+    fun setScDescription(description: String) {
+        this.cardDescription = description
+        applyLayout()
+    }
+
     fun setAlign(align: CardAlign) {
         cardAlign = align
         applyLayout()
@@ -120,12 +130,14 @@ class SelectCardView @JvmOverloads constructor(
         }
 
         // 모든 레이아웃 배경 초기화
-        allLayouts.forEach {
-            findViewById<View>(it)?.setBackgroundResource(R.drawable.bg_select_card_default)
+        allLayouts.forEach { layoutId ->
+            val layoutView = findViewById<View>(layoutId)
+            layoutView?.setBackgroundResource(R.drawable.bg_select_card_default)
         }
 
-        // 선택된 레이아웃 배경만 변경
-        findViewById<View>(targetLayoutId)?.setBackgroundResource(
+        // 현재 활성화된 (targetLayoutId) 레이아웃의 배경을 선택 상태에 따라 변경
+        val selectedLayoutView = findViewById<View>(targetLayoutId)
+        selectedLayoutView?.setBackgroundResource(
             if (isCardSelected) R.drawable.bg_select_card_selected
             else R.drawable.bg_select_card_default
         )
