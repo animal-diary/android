@@ -4,35 +4,60 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:gravity="center_vertical"
+    android:gravity="center"
     android:padding="0dp"
     android:layout_margin="0dp"
     android:paddingStart="@dimen/padding_lg"
     android:paddingEnd="@dimen/padding_lg">
 
-    <!-- Left Icon -->
-    <ImageView
-        android:id="@+id/leftIcon"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_margin="0dp"
-        android:src="@drawable/ic_plus_line" />
+    <!-- 왼쪽 여백 (가변) -->
+    <Space
+        android:id="@+id/leftSpace"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
 
-    <!-- Text -->
-    <TextView
-        android:id="@+id/buttonText"
+    <!-- 아이콘과 텍스트를 담는 컨테이너 -->
+    <LinearLayout
+        android:id="@+id/contentContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0dp"
-        android:gravity="center"
-        android:text="Action"
-        style="@style/Text_ButtonLg" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-    <!-- Right Icon -->
-    <ImageView
-        android:id="@+id/rightIcon"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_margin="0dp"
-        android:src="@drawable/ic_plus_line" />
+        <!-- Left Icon -->
+        <ImageView
+            android:id="@+id/leftIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="0dp"
+            android:src="@drawable/ic_plus_line" />
+
+        <!-- Text -->
+        <TextView
+            android:id="@+id/buttonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:gravity="center"
+            android:text="Action"
+            style="@style/Text_ButtonLg" />
+
+        <!-- Right Icon -->
+        <ImageView
+            android:id="@+id/rightIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="0dp"
+            android:src="@drawable/ic_plus_line" />
+
+    </LinearLayout>
+
+    <!-- 오른쪽 여백 (가변) -->
+    <Space
+        android:id="@+id/rightSpace"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
+
 </LinearLayout>

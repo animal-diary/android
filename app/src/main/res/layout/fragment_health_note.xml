@@ -1,17 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_base">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.example.animaldiary.ui.components.TopNavigationView
+        android:id="@+id/top_nav_health"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="건강노트"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:tnv_title="건강노트"
+        app:tnv_leftIcon="@null"
+        app:tnv_rightIcon1="@null"
+        app:tnv_rightIcon2="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_pet_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:layout_marginTop="@dimen/spacing_xl"
+        app:layout_constraintTop_toBottomOf="@+id/top_nav_health">
+        <TextView
+            android:id="@+id/tv_pet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초코송이"
+            style="@style/Text_Title20Strong"
+            android:textColor="#000000"/>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_down"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_no_records"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginStart="@dimen/spacing_xl"
+        android:layout_marginEnd="@dimen/spacing_xl"
+        android:layout_marginBottom="@dimen/spacing_xl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/ll_pet_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bg_health_note">
 
+        <TextView
+            android:id="@+id/tv_no_records"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아직 건강기록이 없어요.\n아이들의 건강을 관리하러 가볼까요?"
+            android:textColor="@color/fg_neutral_secondary"
+            android:textAlignment="center"
+            style="@style/Text_Title16Strong"
+            app:layout_constraintBottom_toTopOf="@+id/btn_add_record"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/btn_add_record"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:ab_hierarchy="primary"
+            app:ab_leftIcon="@drawable/ic_plus_line"
+            app:ab_leftIconVisible="true"
+            app:ab_size="md"
+            app:ab_state="normal"
+            app:ab_text="기록 추가하기"
+            app:ab_type="filled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_no_records" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_health_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:layout_marginTop="@dimen/spacing_xl"
+        app:layout_constraintTop_toBottomOf="@+id/top_nav_health">
+        <TextView
+            android:id="@+id/tv_intro_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="건강노트"
+            style="@style/Text_Title24Strong"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/tv_intro_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보호자가 입력한 데이터를 종합적으로\n확인할 수 있어요."
+            android:textColor="@color/fg_neutral_secondary"
+            android:textAlignment="gravity"
+            style="@style/Text_Body16Strong" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_no_pet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:layout_marginStart="@dimen/spacing_xl"
+        android:layout_marginEnd="@dimen/spacing_xl"
+        android:layout_marginBottom="@dimen/spacing_xl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_health_note"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bg_health_note">
+
+        <TextView
+            android:id="@+id/tv_no_pet_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아직 등록된 반려동물이 없어요.\n바로 등록하고 건강 관리를 시작하세요!"
+            android:textColor="@color/fg_neutral_secondary"
+            android:textAlignment="center"
+            style="@style/Text_Title16Strong"
+            app:layout_constraintBottom_toTopOf="@+id/btn_add_pet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/btn_add_pet"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:ab_hierarchy="primary"
+            app:ab_leftIcon="@drawable/ic_plus_line"
+            app:ab_leftIconVisible="true"
+            app:ab_size="md"
+            app:ab_state="normal"
+            app:ab_text="반려동물 추가하기"
+            app:ab_type="filled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_no_pet_intro" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
