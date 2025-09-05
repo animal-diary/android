@@ -51,6 +51,8 @@ class HealthNoteFragment : Fragment() {
         // "반려동물 추가하기" 버튼 클릭 리스너 설정
         btnAddPet.setOnClickListener {
             // 버튼 클릭 시 반려동물이 등록된 상태로 가정하고 UI 업데이트
+            // 첫 번째 반려동물을 기본으로 선택
+            selectedPet = petDataList[0]
             updateUi(true, false)
         }
 
@@ -66,6 +68,7 @@ class HealthNoteFragment : Fragment() {
             // 반려동물이 등록된 경우 (왼쪽 이미지)
             binding.llPetName.isVisible = true
             binding.llHealthNote.isVisible = false
+            binding.tvPetName.text = selectedPet?.name ?: "반려동물" // 선택된 반려동물의 이름 표시
 
             if (hasRecords) {
                 // 기록이 있을 경우
@@ -109,7 +112,8 @@ class HealthNoteFragment : Fragment() {
         // 어댑터 연결
         val adapter = PetListAdapter(petDataList, object : PetListAdapter.OnPetClickListener {
             override fun onPetClick(pet: Pet) {
-                binding.tvPetName.text = pet.name // 클릭된 반려동물의 이름으로 텍스트뷰 업데이트
+                selectedPet = pet
+                binding.tvPetName.text = selectedPet?.name // 클릭된 반려동물의 이름으로 텍스트뷰 업데이트
                 dialog.dismiss() // 바텀시트 닫기
             }
         }, initialSelectedPosition)

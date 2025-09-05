@@ -95,11 +95,13 @@ class SelectCardView @JvmOverloads constructor(
     fun setScTitle(title: String) {
         this.cardTitle = title
         applyLayout()
+        updateSelectedState()
     }
 
     fun setScDescription(description: String) {
         this.cardDescription = description
         applyLayout()
+        updateSelectedState()
     }
 
     fun setAlign(align: CardAlign) {
@@ -122,6 +124,11 @@ class SelectCardView @JvmOverloads constructor(
     }
 
     private fun updateSelectedState() {
+        // 선택 상태에 따라 글씨 색상을 결정
+        val titleColor = if (isCardSelected) context.getColor(R.color.fg_selected) else context.getColor(R.color.fg_neutral_secondary)
+        val descriptionColor = if (isCardSelected) context.getColor(R.color.fg_selected) else context.getColor(R.color.fg_neutral_tertiary)
+
+        // 현재 활성화된 레이아웃의 ID를 찾음
         val targetLayoutId = when {
             cardAlign == CardAlign.CENTER && showIllust -> R.id.center_layout_illust
             cardAlign == CardAlign.CENTER && !showIllust -> R.id.center_layout_no_illust
@@ -129,10 +136,24 @@ class SelectCardView @JvmOverloads constructor(
             else -> R.id.left_layout_no_illust
         }
 
-        // 모든 레이아웃 배경 초기화
-        allLayouts.forEach { layoutId ->
-            val layoutView = findViewById<View>(layoutId)
-            layoutView?.setBackgroundResource(R.drawable.bg_select_card_default)
+        // 활성화된 레이아웃에 따라 텍스트 색상을 변경
+        when (targetLayoutId) {
+            R.id.center_layout_illust -> {
+                findViewById<TextView>(R.id.card_title_center)?.setTextColor(titleColor)
+                findViewById<TextView>(R.id.card_description_center)?.setTextColor(descriptionColor)
+            }
+            R.id.center_layout_no_illust -> {
+                findViewById<TextView>(R.id.title_center_no_illust)?.setTextColor(titleColor)
+                findViewById<TextView>(R.id.description_center_no_illust)?.setTextColor(descriptionColor)
+            }
+            R.id.left_layout_illust -> {
+                findViewById<TextView>(R.id.card_title_left)?.setTextColor(titleColor)
+                findViewById<TextView>(R.id.card_description_left)?.setTextColor(descriptionColor)
+            }
+            R.id.left_layout_no_illust -> {
+                findViewById<TextView>(R.id.title_left_no_illust)?.setTextColor(titleColor)
+                findViewById<TextView>(R.id.description_left_no_illust)?.setTextColor(descriptionColor)
+            }
         }
 
         // 현재 활성화된 (targetLayoutId) 레이아웃의 배경을 선택 상태에 따라 변경

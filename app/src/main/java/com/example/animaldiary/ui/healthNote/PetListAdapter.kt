@@ -38,9 +38,13 @@ class PetListAdapter(
 
         // 클릭 리스너 설정
         holder.selectCardView.setOnClickListener {
-            // 이전에 선택된 아이템의 배경을 초기화
+            // 이전에 선택된 아이템의 위치를 저장
             val previousSelectedPosition = selectedPosition
+
+            // 현재 클릭된 아이템의 위치를 업데이트
             selectedPosition = holder.layoutPosition
+
+            // 이전에 선택된 아이템과 현재 선택된 아이템의 뷰를 업데이트
             notifyItemChanged(previousSelectedPosition)
             notifyItemChanged(selectedPosition)
 
