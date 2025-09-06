@@ -1,5 +1,6 @@
 package com.example.animaldiary.ui.healthNote
 
+import NoPetFragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,15 +15,17 @@ import com.example.animaldiary.ui.components.ActionButtonView
 import com.example.animaldiary.ui.components.BottomSheetView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
-class HealthNoteFragment : Fragment() {
+class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener  {
 
     private var _binding: FragmentHealthNoteBinding? = null
     private val binding get() = _binding!!
 
-    private val hasPet = false
-    private val hasRecords = false
+    // 프래그먼트 인스턴스를 클래스 변수로 선언
+    private val noPetFragment = NoPetFragment()
+    private val noRecordsFragment = NoRecordsFragment()
+    private val hasRecordsFragment = HasRecordsFragment()
 
-    // 현재 선택된 반려동물을 저장하는 변수
+    // 현재 선택된 반려동물을 저장하는 변수 (상태 관리용)
     private var selectedPet: Pet? = null
 
     // 더미 데이터 (실제로는 데이터베이스에서 가져와야 함)
@@ -43,50 +46,91 @@ class HealthNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 초기 UI 상태 설정
-        updateUi(hasPet, hasRecords)
-
-        val btnAddPet = binding.clNoPet.findViewById<ActionButtonView>(R.id.btn_add_pet)
-
-        // "반려동물 추가하기" 버튼 클릭 리스너 설정
-        btnAddPet.setOnClickListener {
-            // 버튼 클릭 시 반려동물이 등록된 상태로 가정하고 UI 업데이트
-            // 첫 번째 반려동물을 기본으로 선택
-            selectedPet = petDataList[0]
-            updateUi(true, false)
+        // 초기 프래그먼트들을 모두 추가하고, 첫 화면에 보일 프래그먼트만 보이게 설정
+        if (!noPetFragment.isAdded) {
+            childFragmentManager.beginTransaction()
+                .add(R.id.fragment_container, noPetFragment, "noPet")
+                .add(R.id.fragment_container, noRecordsFragment, "noRecords")
+                .add(R.id.fragment_container, hasRecordsFragment, "hasRecords")
+                .hide(noRecordsFragment)
+                .hide(hasRecordsFragment)
+                .commit()
         }
 
-        // ll_pet_name 클릭 리스너 설정
+        // 초기 UI 상태 설정 (기록이 없는 상태로 시작)
+        updateUi(false, false)
+
+        // 반려동물 이름 레이아웃 클릭 리스너 추가
         binding.llPetName.setOnClickListener {
             showPetSelectionBottomSheet()
         }
 
+        // showNoPetFragment()에서 버튼 클릭 리스너를 직접 설정
+        // 이 리스너는 반려동물이 추가되면 updateUi를 호출합니다.
     }
 
     private fun updateUi(hasPet: Boolean, hasRecords: Boolean) {
         if (hasPet) {
-            // 반려동물이 등록된 경우 (왼쪽 이미지)
+            // 반려동물이 등록된 경우
             binding.llPetName.isVisible = true
-            binding.llHealthNote.isVisible = false
-            binding.tvPetName.text = selectedPet?.name ?: "반려동물" // 선택된 반려동물의 이름 표시
+            binding.tvPetName.text = selectedPet?.name ?: "반려동물"
 
             if (hasRecords) {
                 // 기록이 있을 경우
-                binding.clNoRecords.isVisible = false
-                binding.clNoPet.isVisible = false
-                // TODO: 기록이 있을 때의 뷰를 visible로 설정하는 로직 추가
+                childFragmentManager.beginTransaction()
+                    .hide(noPetFragment)
+                    .hide(noRecordsFragment)
+                    .show(hasRecordsFragment)
+                    .commit()
             } else {
-                // 기록이 없을 경우 (왼쪽 이미지의 빈 화면)
-                binding.clNoRecords.isVisible = true
-                binding.clNoPet.isVisible = false
+                // 기록이 없을 경우
+                childFragmentManager.beginTransaction()
+                    .hide(noPetFragment)
+                    .hide(hasRecordsFragment)
+                    .show(noRecordsFragment)
+                    .commit()
             }
         } else {
-            // 반려동물이 등록되지 않은 경우 (오른쪽 이미지)
+            // 반려동물이 등록되지 않은 경우
             binding.llPetName.isVisible = false
-            binding.llHealthNote.isVisible = true
-            binding.clNoRecords.isVisible = false
-            binding.clNoPet.isVisible = true
+            // 반려동물이 없을 경우
+            childFragmentManager.beginTransaction()
+                .hide(noRecordsFragment)
+                .hide(hasRecordsFragment)
+                .show(noPetFragment)
+                .commit()
         }
+    }
+
+    private fun showNoPetFragment() {
+        val noPetFragment = NoPetFragment()
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, noPetFragment)
+            .commit()
+
+        // NoPetFragment 내부의 버튼 클릭 리스너 설정
+        // 이 방식은 Fragment의 뷰가 생성된 후에만 가능
+        childFragmentManager.executePendingTransactions()
+        val noPetView = noPetFragment.view
+        noPetView?.findViewById<ActionButtonView>(R.id.btn_add_pet)?.setOnClickListener {
+            // 버튼 클릭 시 첫 번째 반려동물을 기본으로 선택하고 UI 업데이트
+            selectedPet = petDataList[0]
+            updateUi(true, false)
+        }
+    }
+
+    private fun showNoRecordsFragment() {
+        val noRecordsFragment = NoRecordsFragment()
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, noRecordsFragment)
+            .commit()
+    }
+
+    private fun showHasRecordsFragment() {
+        val hasRecordsFragment = HasRecordsFragment()
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, hasRecordsFragment)
+            .commit()
     }
 
     // 바텀시트를 표시하는 함수
@@ -109,18 +153,24 @@ class HealthNoteFragment : Fragment() {
 
         val initialSelectedPosition = petDataList.indexOfFirst { it.id == selectedPet?.id }
 
-        // 어댑터 연결
         val adapter = PetListAdapter(petDataList, object : PetListAdapter.OnPetClickListener {
             override fun onPetClick(pet: Pet) {
                 selectedPet = pet
-                binding.tvPetName.text = selectedPet?.name // 클릭된 반려동물의 이름으로 텍스트뷰 업데이트
-                dialog.dismiss() // 바텀시트 닫기
+                binding.tvPetName.text = selectedPet?.name
+                // 기록이 있는지 확인하고 UI 업데이트 (더미 데이터에서는 항상 false)
+                updateUi(true, false)
+                dialog.dismiss()
             }
         }, initialSelectedPosition)
         recyclerView.adapter = adapter
 
         dialog.setContentView(sheet)
         dialog.show()
+    }
+
+    override fun onAddPetClicked() {
+        selectedPet = petDataList[0]
+        updateUi(true, false)
     }
 
     override fun onDestroyView() {
