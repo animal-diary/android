@@ -57,21 +57,21 @@ class CalendarAdapter(val days: List<CalendarDay>, private val itemClickListener
 //                )
             }
 
-            // 클릭 리스너를 설정하여 클릭 이벤트 전달
-            itemView.setOnClickListener {
-                if (day.isCurrentMonth) {
-                    val position = adapterPosition
-                    if (selectedPositions.contains(position)) {
-                        // 이미 선택된 경우, 선택 해제
-                        selectedPositions.remove(position)
-                    } else {
-                        // 선택되지 않은 경우, 새로 추가
-                        selectedPositions.add(position)
-                    }
-                    notifyItemChanged(position)
-                    itemClickListener.onItemClick(selectedPositions)
-                }
-            }
+//            // 클릭 리스너를 설정하여 클릭 이벤트 전달
+//            itemView.setOnClickListener {
+//                if (day.isCurrentMonth) {
+//                    val position = adapterPosition
+//                    if (selectedPositions.contains(position)) {
+//                        // 이미 선택된 경우, 선택 해제
+//                        selectedPositions.remove(position)
+//                    } else {
+//                        // 선택되지 않은 경우, 새로 추가
+//                        selectedPositions.add(position)
+//                    }
+//                    notifyItemChanged(position)
+//                    itemClickListener.onItemClick(selectedPositions)
+//                }
+//            }
         }
     }
 }

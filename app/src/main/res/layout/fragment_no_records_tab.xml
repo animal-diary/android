@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_no_records_tab"
+        android:layout_width="match_parent"
+        android:layout_height="194dp"
+        android:layout_marginBottom="@dimen/spacing_xl"
+        android:background="@drawable/bg_health_note">
+
+        <TextView
+            android:id="@+id/tv_no_record_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택한 항목에는 기록이 없습니다."
+            android:textColor="@color/fg_neutral_secondary"
+            android:textAlignment="center"
+            style="@style/Text_Title16Strong"
+            android:textStyle="bold"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_no_record_content" />
+
+        <TextView
+            android:id="@+id/tv_no_record_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:text="다른 항목을 확인하거나\n새로 기록을 추가해보세요."
+            android:textColor="@color/fg_neutral_tertiary"
+            android:textAlignment="center"
+            style="@style/Text_Body14Normal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_no_record_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btn_add_record" />
+
+        <com.example.animaldiary.ui.components.ActionButtonView
+            android:id="@+id/btn_add_record"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:ab_hierarchy="primary"
+            app:ab_leftIcon="@drawable/ic_plus_line"
+            app:ab_leftIconVisible="true"
+            app:ab_size="md"
+            app:ab_state="normal"
+            app:ab_text="기록하러 가기"
+            app:ab_type="filled"
+            app:layout_constraintTop_toBottomOf="@+id/tv_no_record_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

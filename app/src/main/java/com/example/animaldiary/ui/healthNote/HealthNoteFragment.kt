@@ -11,11 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.animaldiary.R
 import com.example.animaldiary.databinding.FragmentHealthNoteBinding
-import com.example.animaldiary.ui.components.ActionButtonView
 import com.example.animaldiary.ui.components.BottomSheetView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
-class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener  {
+class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener, NoRecordsFragment.OnAddRecordListener {
 
     private var _binding: FragmentHealthNoteBinding? = null
     private val binding get() = _binding!!
@@ -102,37 +101,6 @@ class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener  {
         }
     }
 
-    private fun showNoPetFragment() {
-        val noPetFragment = NoPetFragment()
-        childFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, noPetFragment)
-            .commit()
-
-        // NoPetFragment 내부의 버튼 클릭 리스너 설정
-        // 이 방식은 Fragment의 뷰가 생성된 후에만 가능
-        childFragmentManager.executePendingTransactions()
-        val noPetView = noPetFragment.view
-        noPetView?.findViewById<ActionButtonView>(R.id.btn_add_pet)?.setOnClickListener {
-            // 버튼 클릭 시 첫 번째 반려동물을 기본으로 선택하고 UI 업데이트
-            selectedPet = petDataList[0]
-            updateUi(true, false)
-        }
-    }
-
-    private fun showNoRecordsFragment() {
-        val noRecordsFragment = NoRecordsFragment()
-        childFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, noRecordsFragment)
-            .commit()
-    }
-
-    private fun showHasRecordsFragment() {
-        val hasRecordsFragment = HasRecordsFragment()
-        childFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, hasRecordsFragment)
-            .commit()
-    }
-
     // 바텀시트를 표시하는 함수
     private fun showPetSelectionBottomSheet() {
         val dialog = BottomSheetDialog(requireContext())
@@ -173,8 +141,14 @@ class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener  {
         updateUi(true, false)
     }
 
+    override fun onAddRecordClicked() {
+        updateUi(true, true)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

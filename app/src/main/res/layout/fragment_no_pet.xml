@@ -21,6 +21,7 @@
         android:id="@+id/tv_intro_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xs"
         android:text="보호자가 입력한 데이터를 종합적으로\n확인할 수 있어요."
         android:textColor="@color/fg_neutral_secondary"
         android:textAlignment="gravity"
@@ -36,7 +37,7 @@
 
         <TextView
             android:id="@+id/tv_no_pet_intro"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="아직 등록된 반려동물이 없어요.\n바로 등록하고 건강 관리를 시작하세요!"
             android:textColor="@color/fg_neutral_secondary"
