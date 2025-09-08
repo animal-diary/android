@@ -142,7 +142,7 @@ class ActionButtonView @JvmOverloads constructor(
 
         buttonText.gravity = Gravity.CENTER
         val textParams = buttonText.layoutParams as? LinearLayout.LayoutParams
-        textParams?.weight = 1f  // 남은 공간을 모두 차지
+        textParams?.weight = 0f  // 남은 공간을 모두 차지
         buttonText.layoutParams = textParams
     }
 
