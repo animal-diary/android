@@ -3,7 +3,7 @@ package com.example.animaldiary.ui.healthNote
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class TabPagerAdapter(activity: HasRecordsFragment, private val tabTitles: List<String>) : FragmentStateAdapter(activity) {
+class HasRecordsPagerAdapter(activity: HasRecordsFragment, private val tabTitles: List<String>) : FragmentStateAdapter(activity) {
 
     override fun getItemCount(): Int = tabTitles.size
 

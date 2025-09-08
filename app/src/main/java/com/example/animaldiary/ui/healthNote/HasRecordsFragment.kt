@@ -48,7 +48,7 @@ class HasRecordsFragment : Fragment(), CalendarAdapter.OnItemClickListener {
 
     private fun setupTabsWithViewPager() {
         // ViewPager2에 어댑터 설정
-        binding.viewPager.adapter = TabPagerAdapter(this, tabTitles)
+        binding.viewPager.adapter = HasRecordsPagerAdapter(this, tabTitles)
 
         // TabLayout과 ViewPager2를 연결하고 탭 디자인을 커스터마이징
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
