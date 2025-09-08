@@ -3,6 +3,7 @@ package com.example.animaldiary.ui.components
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -36,36 +37,45 @@ class TextInputView @JvmOverloads constructor(
         errorText = findViewById(R.id.ti_errorText)
         inputContainer = findViewById(R.id.ti_inputContainer)
 
-        // 기본 숨김 처리
-        title.visibility = GONE
-        requiredMark.visibility = GONE
-        description.visibility = GONE
-        errorText.visibility = GONE
-        icon.visibility = GONE
-
         // XML 속성 처리
         attrs?.let {
             val ti = context.obtainStyledAttributes(it, R.styleable.TextInputView, 0, 0)
             try {
-                ti.getString(R.styleable.TextInputView_ti_title)?.let {
-                    title.text = it
-                    title.visibility = VISIBLE
+                // ti_title 속성
+                val tiTitle = ti.getString(R.styleable.TextInputView_ti_title)
+                val showTitle = ti.getBoolean(R.styleable.TextInputView_ti_showTitle, true)
+                if (showTitle) {
+                    title.text = tiTitle
                 }
-                ti.getBoolean(R.styleable.TextInputView_ti_required, false).let {
-                    requiredMark.visibility = if (it) VISIBLE else GONE
+                showTitle(showTitle)
+
+                // ti_required 속성
+                val isRequired = ti.getBoolean(R.styleable.TextInputView_ti_required, false)
+                showRequiredMark(isRequired)
+
+                // ti_description 속성
+                val tiDescription = ti.getString(R.styleable.TextInputView_ti_description)
+                val showDescription = ti.getBoolean(R.styleable.TextInputView_ti_showDescription, true)
+                if (showDescription) {
+                    this.description.text = tiDescription
                 }
-                ti.getString(R.styleable.TextInputView_ti_description)?.let {
-                    description.text = it
-                    description.visibility = VISIBLE
-                }
+                showDescription(showDescription)
+
+                // ti_placeholder 속성
                 ti.getString(R.styleable.TextInputView_ti_placeholder)?.let {
                     input.hint = it
                 }
+
+                // ti_icon 속성
                 val iconRes = ti.getResourceId(R.styleable.TextInputView_ti_icon, 0)
                 if (iconRes != 0) {
                     icon.setImageResource(iconRes)
-                    icon.visibility = VISIBLE
+                    showIcon(true)
+                } else {
+                    showIcon(false)
                 }
+
+                // ti_errorText 속성
                 ti.getString(R.styleable.TextInputView_ti_errorText)?.let {
                     errorText.text = it
                 }
@@ -90,35 +100,59 @@ class TextInputView @JvmOverloads constructor(
         }
     }
 
+    // 동적 제어를 위한 공개 함수들
+    fun setTitle(text: String) {
+        title.text = text
+    }
+
+    fun showTitle(show: Boolean) {
+        title.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    fun showRequiredMark(show: Boolean) {
+        requiredMark.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    fun setDescription(text: String) {
+        description.text = text
+    }
+
+    fun showDescription(show: Boolean) {
+        description.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    fun showIcon(show: Boolean) {
+        icon.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
     fun getText(): String = input.text.toString()
 
     fun setError(message: String) {
         errorText.text = message
-        errorText.visibility = VISIBLE
-        inputContainer.setBackgroundResource(R.drawable.bg_text_input_error)
+        setErrorState()
     }
 
     fun clearError() {
-        errorText.visibility = GONE
-        inputContainer.setBackgroundResource(R.drawable.bg_text_input_default)
+        errorText.visibility = View.GONE
+        setDefaultState()
     }
 
     fun setDefaultState() {
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_default)
-        errorText.visibility = GONE
+        errorText.visibility = View.GONE
     }
 
     fun setFocusedState() {
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_active)
-        errorText.visibility = GONE
+        errorText.visibility = View.GONE
     }
 
     fun setErrorState() {
         inputContainer.setBackgroundResource(R.drawable.bg_text_input_error)
-        errorText.visibility = VISIBLE
+        errorText.visibility = View.VISIBLE
     }
 
-    private fun setDisabledState() {
+    fun setDisabledState() {
         input.isEnabled = false
         input.setTextColor(ContextCompat.getColor(context, R.color.fg_disabled))
         input.setHintTextColor(ContextCompat.getColor(context, R.color.fg_disabled))
