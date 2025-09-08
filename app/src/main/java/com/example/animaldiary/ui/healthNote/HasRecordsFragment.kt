@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.animaldiary.databinding.FragmentHasRecordsBinding
 import com.example.animaldiary.test.calendar.CalendarAdapter
 import com.example.animaldiary.test.calendar.CalendarDay
+import com.example.animaldiary.ui.components.DatePickerDialog
 import com.example.animaldiary.ui.components.TabsView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -121,6 +122,27 @@ class HasRecordsFragment : Fragment(), CalendarAdapter.OnItemClickListener {
         binding.calendarComponent.ivNextMonth.setOnClickListener {
             calendar.add(Calendar.MONTH, 1)
             updateCalendar()
+        }
+
+        binding.calendarComponent.tvMonthYear.setOnClickListener {
+            // DatePicker 다이얼로그를 표시합니다.
+            val datePickerDialog = DatePickerDialog(
+                context = requireContext(),
+                showDay = false,
+                initialYear = calendar.get(Calendar.YEAR),
+                initialMonth = calendar.get(Calendar.MONTH) + 1,
+                initialDay = calendar.get(Calendar.DAY_OF_MONTH),
+                isFragment = true
+            )
+
+            datePickerDialog.setOnDateSelectedListener { year, month, _, _ ->
+                // 선택된 년도와 월로 캘린더를 업데이트합니다.
+                calendar.set(Calendar.YEAR, year)
+                calendar.set(Calendar.MONTH, month - 1)
+                updateCalendar()
+            }
+
+            datePickerDialog.show()
         }
 
         // 캘린더 초기 상태 업데이트

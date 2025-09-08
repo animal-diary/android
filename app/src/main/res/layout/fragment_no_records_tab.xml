@@ -8,7 +8,6 @@
         android:id="@+id/cl_no_records_tab"
         android:layout_width="match_parent"
         android:layout_height="194dp"
-        android:layout_marginBottom="@dimen/spacing_xl"
         android:background="@drawable/bg_health_note">
 
         <TextView
