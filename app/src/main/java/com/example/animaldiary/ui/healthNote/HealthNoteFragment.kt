@@ -11,11 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.animaldiary.R
 import com.example.animaldiary.databinding.FragmentHealthNoteBinding
-import com.example.animaldiary.ui.components.ActionButtonView
 import com.example.animaldiary.ui.components.BottomSheetView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
-class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener  {
+class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener, NoRecordsFragment.OnAddRecordListener, HasRecordsFragment.OnRecordSelectedListener {
 
     private var _binding: FragmentHealthNoteBinding? = null
     private val binding get() = _binding!!
@@ -64,9 +63,6 @@ class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener  {
         binding.llPetName.setOnClickListener {
             showPetSelectionBottomSheet()
         }
-
-        // showNoPetFragment()에서 버튼 클릭 리스너를 직접 설정
-        // 이 리스너는 반려동물이 추가되면 updateUi를 호출합니다.
     }
 
     private fun updateUi(hasPet: Boolean, hasRecords: Boolean) {
@@ -100,37 +96,6 @@ class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener  {
                 .show(noPetFragment)
                 .commit()
         }
-    }
-
-    private fun showNoPetFragment() {
-        val noPetFragment = NoPetFragment()
-        childFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, noPetFragment)
-            .commit()
-
-        // NoPetFragment 내부의 버튼 클릭 리스너 설정
-        // 이 방식은 Fragment의 뷰가 생성된 후에만 가능
-        childFragmentManager.executePendingTransactions()
-        val noPetView = noPetFragment.view
-        noPetView?.findViewById<ActionButtonView>(R.id.btn_add_pet)?.setOnClickListener {
-            // 버튼 클릭 시 첫 번째 반려동물을 기본으로 선택하고 UI 업데이트
-            selectedPet = petDataList[0]
-            updateUi(true, false)
-        }
-    }
-
-    private fun showNoRecordsFragment() {
-        val noRecordsFragment = NoRecordsFragment()
-        childFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, noRecordsFragment)
-            .commit()
-    }
-
-    private fun showHasRecordsFragment() {
-        val hasRecordsFragment = HasRecordsFragment()
-        childFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, hasRecordsFragment)
-            .commit()
     }
 
     // 바텀시트를 표시하는 함수
@@ -168,13 +133,41 @@ class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener  {
         dialog.show()
     }
 
+    fun hideParentViews() {
+        binding.topNavHealth.isVisible = false
+        binding.llPetName.isVisible = false
+    }
+
+    fun showParentViews() {
+        binding.topNavHealth.isVisible = true
+        binding.llPetName.isVisible = true
+    }
+
     override fun onAddPetClicked() {
         selectedPet = petDataList[0]
         updateUi(true, false)
+    }
+
+    override fun onAddRecordClicked() {
+        updateUi(true, true)
+    }
+
+    override fun onRecordSelected(year: Int, month: Int, day: Int) {
+        hideParentViews()
+
+        // HealthRecordDetailFragment의 새 인스턴스를 생성
+        val detailFragment = HealthRecordDetailFragment.newInstance(year, month, day)
+
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, detailFragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

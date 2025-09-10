@@ -3,6 +3,7 @@ package com.example.animaldiary.ui.components
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +13,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import androidx.core.view.isVisible
 import com.example.animaldiary.R
-import java.util.*
+import java.util.Calendar
 
 class DatePickerDialog(
     context: Context,
@@ -20,7 +21,8 @@ class DatePickerDialog(
     private val initialYear: Int = Calendar.getInstance().get(Calendar.YEAR),
     private val initialMonth: Int = Calendar.getInstance().get(Calendar.MONTH) + 1,
     private val initialDay: Int = Calendar.getInstance().get(Calendar.DAY_OF_MONTH),
-    private val initialIsSolar: Boolean = true
+    private val initialIsSolar: Boolean = true,
+    private val isFragment: Boolean = false
 ) : Dialog(context, R.style.DialogTheme) {
 
 
@@ -55,15 +57,35 @@ class DatePickerDialog(
         setContentView(view)
 
         window?.apply {
-            val margin = context.resources.getDimensionPixelSize(R.dimen.spacing_4xl) // 20dp
+
             setLayout(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
             )
+            // 다이얼로그를 화면 아래쪽에 배치
+            setGravity(Gravity.BOTTOM)
+
+            // 하단 마진(24dp)을 창의 y 좌표로 설정
+            val params = attributes
+            val bottomMargin: Int
+
+            // 프래그먼트에서 호출되었을 경우
+            if (isFragment) {
+                // 바텀 내비게이션 바 높이 + 24dp
+                val navBarHeightPx = (80 * context.resources.displayMetrics.density).toInt()
+                bottomMargin = navBarHeightPx + context.resources.getDimensionPixelSize(R.dimen.spacing_2xl)
+            } else {
+                // 액티비티에서 호출되었을 경우 (24dp만 적용)
+                bottomMargin = context.resources.getDimensionPixelSize(R.dimen.spacing_2xl)
+            }
+            params.y = bottomMargin
+            attributes = params
+
             setBackgroundDrawableResource(android.R.color.transparent)
             // 다이얼로그 표시
             attributes?.windowAnimations = R.style.DialogAnimation
 
+            val margin = context.resources.getDimensionPixelSize(R.dimen.spacing_xl) // 20dp
             decorView.setPadding(margin, 0, margin, 0)
         }
 

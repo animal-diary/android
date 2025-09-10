@@ -15,10 +15,10 @@ class TopNavigationView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : ConstraintLayout(context, attrs, defStyle) {
 
-    private val leftIcon: ImageView
-    private val rightIcon1: ImageView
-    private val rightIcon2: ImageView
-    private val titleText: TextView
+    val leftIcon: ImageView
+    val rightIcon1: ImageView
+    val rightIcon2: ImageView
+    val titleText: TextView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.component_top_navigation, this, true)

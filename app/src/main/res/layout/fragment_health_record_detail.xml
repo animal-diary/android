@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_base">
+
+    <com.example.animaldiary.ui.components.TopNavigationView
+        android:id="@+id/tnv_record_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tnv_showTitle="true"
+        app:tnv_leftIcon="@drawable/ic_chevron_left"
+        app:tnv_rightIcon1="@null"
+        app:tnv_rightIcon2="@null"
+        tools:tnv_title="2025년 7월 19일" />
+
+    <LinearLayout
+        android:id="@+id/ll_date_section"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/bg_page_neutral"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/padding_lg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tnv_record_detail">
+
+        <TextView
+            android:id="@+id/tv_record_date"
+            style="@style/Text_Title14Strong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fg_neutral_secondary"
+            tools:text="2025년 7월 19일"
+            android:layout_marginTop="@dimen/spacing_lg"/>
+
+        <TextView
+            android:id="@+id/tv_record_info"
+            style="@style/Text_Title20Strong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:text="오늘의 기록을 확인해 보세요."
+            android:textColor="@color/fg_neutral_primary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_record_description"
+            style="@style/Text_Caption14Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:text="괄호 안의 숫자는 보호자가 하루 동안 해당 선택지를 기록한 횟수입니다."
+            android:textColor="@color/fg_neutral_primary" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_xl"
+            android:background="@android:color/transparent"
+            android:overScrollMode="never"
+            app:tabIndicatorHeight="0dp"
+            app:tabMinWidth="0dp"
+            app:tabMode="scrollable"
+            app:tabPaddingEnd="0dp"
+            app:tabPaddingStart="0dp"
+            app:tabRippleColor="@android:color/transparent" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
