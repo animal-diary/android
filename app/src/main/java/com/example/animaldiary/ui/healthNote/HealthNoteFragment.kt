@@ -14,7 +14,7 @@ import com.example.animaldiary.databinding.FragmentHealthNoteBinding
 import com.example.animaldiary.ui.components.BottomSheetView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
-class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener, NoRecordsFragment.OnAddRecordListener {
+class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener, NoRecordsFragment.OnAddRecordListener, HasRecordsFragment.OnRecordSelectedListener {
 
     private var _binding: FragmentHealthNoteBinding? = null
     private val binding get() = _binding!!
@@ -63,9 +63,6 @@ class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener, NoRecor
         binding.llPetName.setOnClickListener {
             showPetSelectionBottomSheet()
         }
-
-        // showNoPetFragment()에서 버튼 클릭 리스너를 직접 설정
-        // 이 리스너는 반려동물이 추가되면 updateUi를 호출합니다.
     }
 
     private fun updateUi(hasPet: Boolean, hasRecords: Boolean) {
@@ -136,6 +133,16 @@ class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener, NoRecor
         dialog.show()
     }
 
+    fun hideParentViews() {
+        binding.topNavHealth.isVisible = false
+        binding.llPetName.isVisible = false
+    }
+
+    fun showParentViews() {
+        binding.topNavHealth.isVisible = true
+        binding.llPetName.isVisible = true
+    }
+
     override fun onAddPetClicked() {
         selectedPet = petDataList[0]
         updateUi(true, false)
@@ -143,6 +150,18 @@ class HealthNoteFragment : Fragment(), NoPetFragment.OnPetAddedListener, NoRecor
 
     override fun onAddRecordClicked() {
         updateUi(true, true)
+    }
+
+    override fun onRecordSelected(year: Int, month: Int, day: Int) {
+        hideParentViews()
+
+        // HealthRecordDetailFragment의 새 인스턴스를 생성
+        val detailFragment = HealthRecordDetailFragment.newInstance(year, month, day)
+
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, detailFragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onDestroyView() {

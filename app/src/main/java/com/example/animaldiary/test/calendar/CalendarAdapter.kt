@@ -45,7 +45,7 @@ class CalendarAdapter(val days: List<CalendarDay>, private val itemClickListener
 
             // 선택 여부에 따라 배경과 텍스트 색상을 변경
             if (isSelected) {
-                dayTextView.setBackgroundResource(R.drawable.bg_calendar_none_pressed) // 선택된 날짜 배경
+//                dayTextView.setBackgroundResource(R.drawable.bg_calendar_none_pressed) // 선택된 날짜 배경
 //                dayTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.fg_inverse)) // 선택된 날짜 텍스트 색상
             } else {
                 dayTextView.background = null // 배경 제거
@@ -57,21 +57,17 @@ class CalendarAdapter(val days: List<CalendarDay>, private val itemClickListener
 //                )
             }
 
-//            // 클릭 리스너를 설정하여 클릭 이벤트 전달
-//            itemView.setOnClickListener {
-//                if (day.isCurrentMonth) {
-//                    val position = adapterPosition
-//                    if (selectedPositions.contains(position)) {
-//                        // 이미 선택된 경우, 선택 해제
-//                        selectedPositions.remove(position)
-//                    } else {
-//                        // 선택되지 않은 경우, 새로 추가
-//                        selectedPositions.add(position)
-//                    }
-//                    notifyItemChanged(position)
-//                    itemClickListener.onItemClick(selectedPositions)
-//                }
-//            }
+            // 클릭 리스너를 설정하여 클릭 이벤트 전달
+            itemView.setOnClickListener {
+                if (day.isCurrentMonth) {
+                    val position = adapterPosition
+                    // 이미 선택된 경우, 선택 해제
+                    selectedPositions.clear()
+                    selectedPositions.add(position)
+                    notifyDataSetChanged() // 전체를 새로고침하여 선택 상태를 업데이트
+                    itemClickListener.onItemClick(selectedPositions)
+                }
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.animaldiary.ui.healthNote
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -199,12 +200,42 @@ class HasRecordsFragment : Fragment(), CalendarAdapter.OnItemClickListener {
         return daysList
     }
 
+    interface OnRecordSelectedListener {
+        fun onRecordSelected(year: Int, month: Int, day: Int)
+    }
+
+    private var recordSelectedListener: OnRecordSelectedListener? = null
+
+    // 2. onAttach에서 리스너 초기화
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (parentFragment is OnRecordSelectedListener) {
+            recordSelectedListener = parentFragment as OnRecordSelectedListener
+        }
+    }
+
     // 날짜 클릭 시 동작
     override fun onItemClick(positions: Set<Int>) {
-        // TODO: 선택된 날짜들의 정보를 처리하는 로직을 여기에 구현
-        // 예: `positions`를 사용하여 선택된 날짜에 대한 데이터를 로드하고 뷰를 업데이트
-        // `positions`는 선택된 아이템들의 어댑터 위치(Int)를 담고 있는 Set입니다.
-        // `calendarAdapter.days`를 사용하여 해당 위치의 CalendarDay 객체에 접근할 수 있습니다.
+        if (positions.size == 1) {
+            val selectedPosition = positions.first()
+            val selectedDay = calendarAdapter.days[selectedPosition]
+
+            if (selectedDay.isCurrentMonth) {
+                val selectedDate = Calendar.getInstance().apply {
+                    set(Calendar.YEAR, calendar.get(Calendar.YEAR))
+                    set(Calendar.MONTH, calendar.get(Calendar.MONTH))
+                    set(Calendar.DAY_OF_MONTH, selectedDay.day)
+                }
+
+                // 부모에게 선택된 날짜를 알립니다.
+                // 부모가 뷰를 숨기고 새 프래그먼트를 로드하도록 합니다.
+                recordSelectedListener?.onRecordSelected(
+                    selectedDate.get(Calendar.YEAR),
+                    selectedDate.get(Calendar.MONTH) + 1,
+                    selectedDate.get(Calendar.DAY_OF_MONTH)
+                )
+            }
+        }
     }
 
     override fun onDestroyView() {
