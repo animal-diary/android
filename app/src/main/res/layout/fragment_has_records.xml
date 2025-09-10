@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/padding_xl"
-        android:paddingTop="@dimen/spacing_md"
         android:paddingBottom="@dimen/spacing_xl">
 
         <FrameLayout
