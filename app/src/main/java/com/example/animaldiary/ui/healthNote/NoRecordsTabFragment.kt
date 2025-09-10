@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.animaldiary.R
 
-class NoRecodesTabFragment : Fragment() {
+class NoRecordsTabFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,8 +20,8 @@ class NoRecodesTabFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(title: String): NoRecodesTabFragment {
-            val fragment = NoRecodesTabFragment()
+        fun newInstance(title: String): NoRecordsTabFragment {
+            val fragment = NoRecordsTabFragment()
             val args = Bundle()
             args.putString("TAB_TITLE", title)
             fragment.arguments = args

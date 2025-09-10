@@ -9,6 +9,6 @@ class HasRecordsPagerAdapter(activity: HasRecordsFragment, private val tabTitles
 
     override fun createFragment(position: Int): Fragment {
         // 각 탭에 해당하는 프래그먼트 생성
-        return NoRecodesTabFragment.newInstance(tabTitles[position])
+        return NoRecordsTabFragment.newInstance(tabTitles[position])
     }
 }
