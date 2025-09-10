@@ -86,7 +86,7 @@ class HealthRecordDetailFragment : Fragment() {
             val calendar = Calendar.getInstance().apply {
                 set(year, month - 1, day)
             }
-            val dateFormat = SimpleDateFormat("yyyy년 M월 dd일", Locale.getDefault())
+            val dateFormat = SimpleDateFormat("yyyy년 M월 d일", Locale.getDefault())
             val formattedDate = dateFormat.format(calendar.time)
 
             binding.tnvRecordDetail.setTitle(formattedDate)
