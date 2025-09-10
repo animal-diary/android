@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.example.animaldiary.databinding.FragmentHealthRecordDetailBinding
 import com.example.animaldiary.ui.components.TabsView
@@ -53,6 +54,16 @@ class HealthRecordDetailFragment : Fragment() {
         setupTopNavigationView()
         displayRecordDate()
         setupTabsWithViewPager()
+
+        // 시스템 뒤로가기 대응
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    (parentFragment as? HealthNoteFragment)?.showParentViews()
+                    parentFragmentManager.popBackStack()
+                }
+            }
+        )
     }
 
     private fun setupTopNavigationView() {
